@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>
+      <a href="../login/login.html" onclick="route()">logowanie</a>
+    </button>
+
+    <form action="#">
+      <h2>zarejestruj</h2>
+
+      <div class="">
+        <label id = "labelUsername">nazwa użytkowanika</label>
+        <input type="text" id="userName" placeholder="nazwa" />
+      </div>
+
+      <div class="">
+        <label>hasło</label>
+        <input type="password" id="password" placeholder="hasło" />
+      </div>
+
+      <div class="">
+        <label id = "labelEmail">email</label>
+        <input type="text" id="email" placeholder="email" />
+      </div>
+
+      <div class="">
+        <label>potwierdź email</label>
+        <input type="text" id="emailRepeat" placeholder="email" />
+      </div>
+
+      <button type="button" id="btnRegister">zarejestruj</button>
+    </form>
+
+    <script src="./register.js"></script>
+  </body>
+</html>
