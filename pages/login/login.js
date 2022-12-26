@@ -1,9 +1,14 @@
+
+const userName = document.getElementById("userName")
+const password = document.getElementById("password")
 const btn = document.getElementById("btnLogin")
 const userPrintName = document.getElementById('userPrintName')
 
 
 btn.addEventListener("click", () =>{
     saveData()
+    userName.value = ""
+    password.value = ""
 })
 
 let userNameinLocalStorage =  localStorage.getItem('userName')?localStorage.getItem('userName'):""
@@ -16,8 +21,8 @@ if(userNameinLocalStorage !== ""){
 
 const saveData = () =>{
 
-let userName = document.getElementById("userName").value
-let password = document.getElementById("password").value
+const userName = document.getElementById("userName").value
+const password = document.getElementById("password").value
 
 
 let userData =  new Array()

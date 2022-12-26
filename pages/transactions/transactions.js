@@ -1,3 +1,7 @@
+import { printDataInTable} from "./printDataInTable.js"
+import {printDataInChartBar } from "./printDataInChartBar.js"
+import { printDataInDought } from "./printDataInChartDought.js"
+
 const btn = document.getElementById("btnLogout")
 
 btn.addEventListener("click", ()=>{
@@ -17,12 +21,11 @@ if(userNameinLocalStorage === ""){
 
 const logout = () =>{
     localStorage.removeItem('userName')
-    window.location.href = "../home/home.html"
+    // window.location.href = "../home/home.html"
+    window.location.href = "../../index.html"
 }
 
-
-
-
-
-
+ printDataInDought()
+printDataInTable()
+printDataInChartBar()
 
