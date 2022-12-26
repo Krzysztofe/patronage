@@ -1,60 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   
-</head>
-<body>
-    
-</body>
-</html>
+  <head>
+    <title>Register form js</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/f3b0ddb395.js" crossorigin="anonymous"></script>
 
+  </head>
+  <body>
+    <button id="btnLogout">
+      <!-- <a href="/pages/home/home.html"> -->
+      wyloguj
 
+      <!-- </a> -->
+    </button>
 
+    tranzakcje
+ 
+    <p>
+      witaj:
+      <span id="userPrintName"></span>
+      <script>
+        document.write(localStorage.getItem('userName'))
+      </script>
+    </p>
 
-<button id="btnLogout">
-  <!-- <a href="/pages/home/home.html"> -->
-  wyloguj
+    <table>
+      <thead>
+        <tr>
+          <th>data</th>
+          <th>typ tranzakcji</th>
+          <th>opis</th>
+          <th>kwota</th>
+          <th>saldo</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
 
-  <!-- </a> -->
-</button>
+    <div class="">
+      <canvas id="chartDought"></canvas>
+    </div>
 
-tranzakcje
-<p>
-  witaj:
-  <span id="userPrintName"></span>
+    <div class="">
+      <canvas id="chartBar"></canvas>
+    </div>
 
-  <script>
-    document.write(localStorage.getItem('userName'))
-  </script>
-</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>typ tranzakcji</th>
-      <th>opis</th>
-      <th>kwota</th>
-      <th>saldo</th>
-    </tr>
-  </thead>
-  <tbody id = "tbody">
-  </tbody>
-</table>
-
-<div class="">
-  <canvas id = "chartDought"></canvas>
-</div>
-
-<div class="">
-    <canvas id = "chartBar"></canvas>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script type = "module" src="./transactions.js"></script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="./transactions.js"></script>
+  </body>
 </html>

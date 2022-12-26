@@ -15,28 +15,32 @@
       <h2>zarejestruj</h2>
 
       <div class="">
-        <label id = "labelUsername">nazwa użytkowanika</label>
+        <label id="labelUsername">nazwa użytkowanika</label>
         <input type="text" id="userName" placeholder="nazwa" />
+        <span class="errorUserName"></span>
       </div>
 
       <div class="">
         <label>hasło</label>
         <input type="password" id="password" placeholder="hasło" />
+        <span class="errorPassword"></span>
       </div>
 
       <div class="">
-        <label id = "labelEmail">email</label>
+        <label id="labelEmail">email</label>
         <input type="text" id="email" placeholder="email" />
+        <span class="errorEmail"></span>
       </div>
 
       <div class="">
         <label>potwierdź email</label>
-        <input type="text" id="emailRepeat" placeholder="email" />
+        <input type="email" id="emailRepeat" placeholder="email" />
+        <span class="errorEmailRepeat"></span>
       </div>
 
       <button type="button" id="btnRegister">zarejestruj</button>
     </form>
 
-    <script src="./register.js"></script>
+    <script type = "module" src="./register.js"></script>
   </body>
 </html>
