@@ -1,13 +1,15 @@
 import { API_URL, API_KEY } from '../../data/URL.js';
+import { sendHTTPRequest } from '../../utils/sentHTTPRequest.js';
 
 export const printDataInChartBar = () => {
-  fetch(API_URL, {
-    headers: {
-      'x-access-key': API_KEY,
-    },
-  })
-    .then(resp => resp.json())
+  const chartBarContainer = document.querySelector('.chartBarContainer');
+  const message = document.createElement('div');
+  message.innerText = 'loading';
+  chartBarContainer.append(message);
+
+  sendHTTPRequest(API_URL, API_KEY)
     .then(data => {
+      message.remove();
       const dates = data.record.transactions
         .map(transaction => {
           return transaction.date;
@@ -19,6 +21,10 @@ export const printDataInChartBar = () => {
       });
 
       return chartPrint(dates, balances);
+    })
+    .catch(err => {
+      message.innerHTML = `<p>${err} ${err.data.message}</p>`;
+      chartBarContainer.append(message);
     });
 };
 

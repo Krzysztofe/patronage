@@ -1,13 +1,16 @@
-import { API_URL, API_KEY } from "../../data/URL.js";
+import { API_URL, API_KEY } from '../../data/URL.js';
+import { sendHTTPRequest } from '../../utils/sentHTTPRequest.js';
 
 export const printDataInDought = () => {
-  fetch(API_URL, {
-    headers: {
-      'x-access-key': API_KEY,
-    },
-  })
-    .then(resp => resp.json())
+
+  const chartDoughtContainer = document.querySelector('.chartDoughtContainer');
+  const message = document.createElement('div');
+  message.innerText = 'loading';
+  chartDoughtContainer.append(message);
+
+  sendHTTPRequest(API_URL, API_KEY)
     .then(data => {
+      message.remove();
       const transactions = data.record.transactions;
       const transacationTypes = data.record.transacationTypes;
       const typesList = transactions.map(i => {
@@ -35,6 +38,10 @@ export const printDataInDought = () => {
       const transactionsRepeatitions = Object.values(typesCounter);
 
       return chartPrint(transactionsNames, transactionsRepeatitions);
+    })
+    .catch(err => {
+      message.innerHTML = `<p>${err} ${err.data.message}</p>`;
+      chartDoughtContainer.append(message);
     });
 };
 

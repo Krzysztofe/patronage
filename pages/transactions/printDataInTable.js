@@ -1,4 +1,5 @@
 import { API_URL, API_KEY } from '../../data/URL.js';
+import { sendHTTPRequest } from '../../utils/sentHTTPRequest.js';
 
 const iconPrintType = type => {
   switch (type) {
@@ -35,12 +36,9 @@ const typeDescription = type => {
 };
 
 export const printDataInTable = () => {
-  fetch(API_URL, {
-    headers: {
-      'x-access-key': API_KEY,
-    },
-  })
-    .then(resp => resp.json())
+  document.querySelector('tbody').innerHTML = '<p>loading</p>';
+
+  sendHTTPRequest(API_URL, API_KEY)
     .then(data => data.record.transactions)
     .then(transactions => {
       let tablePatern = '';
@@ -58,5 +56,9 @@ export const printDataInTable = () => {
 
       document.getElementById('tbody').innerHTML = tablePatern;
     })
-    .catch(error => console.log(error));
+    .catch(err => {
+      document.querySelector(
+        'table'
+      ).innerHTML = `<p>${err} ${err.data.message}</p>`;
+    });
 };
