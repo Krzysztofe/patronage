@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Stuff</title>
     <meta charset="UTF-8" />
-</head>
+  </head>
 
-<body>
-<!-- <ul>
+  <body>
+    <!-- <ul>
 <li value = "home">Home</li>
 <li value = "login">login</li>
 <li value = "logout">logout</li>
 <li value = "register">register</li>
 </ul> -->
-<!-- <button><a href="/pages/register.html"> register</a></button> -->
+    <!-- <button><a href="/pages/register.html"> register</a></button> -->
 
-
-
-<!-- <div id="root">
+    <!-- <div id="root">
  
     <div id="main-page"> 
         
     </div>
 </div> -->
 
-<button><a href="/pages/login/login.html">logowanie</a></button>
-<button><a href="/pages/register/register.html">rejestracja</a></button>
-<button><a href="/pages/transactions/transactions.html">tranzakcje</a></button>
+    <!-- <button><a href="/pages/login/login.html">logowanie</a></button> -->
 
 
-<script type = "module" src="/router.js"></script>
-<!-- <script src = 'js/formRegister.js'></script> -->
+    <script>
+      !localStorage.getItem('userName') &&
+        document.write("<button  id = 'btnRegister'>Rejestracja</button>")
 
-</body>
+      !localStorage.getItem('userName') &&
+        document.write("<button  id = 'btnLogin'>Logowanie</button>")
+
+      localStorage.getItem('userName') &&
+        document.write("<button  id = 'btnTransactions'>Transakcje</button>")
+
+      localStorage.getItem('userName') &&
+        document.write("  <button  id = 'btnLogout'>Wyloguj</button>  ")
+    </script>
+    <p>
+      <span id="userPrintName"></span>
+      <script>
+        localStorage.getItem('userName') &&
+          document.write(`Zalogowano: ${localStorage.getItem('userName')}`)
+      </script>
+    </p>
+
+    <script type="module" src="/router.js"></script>
+    <script src="./pages/home/home.js"></script>
+  </body>
 </html>

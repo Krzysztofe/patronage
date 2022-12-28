@@ -4,6 +4,13 @@
 
   <h2>logowanie</h2>
 
+  <p>
+    <span id="userPrintName"></span>
+    <script>
+      localStorage.getItem('userName') && document.write('Jesteś zalogowany')
+    </script>
+  </p>
+
   <div class="">
     <label>nazwa użytkowanika</label>
     <input type="text" id="userName" placeholder="nazwa" />

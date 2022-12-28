@@ -11,6 +11,16 @@
       <a href="../login/login.html" onclick="route()">logowanie</a>
     </button>
 
+    <p>
+  
+      <span id="userPrintName"></span>
+      <script>
+         localStorage.getItem('userName')&&
+        document.write(`Zalogowany: ${localStorage.getItem('userName')}`)
+      </script>
+    </p>
+
+
     <form action="#">
       <h2>zarejestruj</h2>
 
@@ -41,6 +51,6 @@
       <button type="button" id="btnRegister">zarejestruj</button>
     </form>
 
-    <script type = "module" src="./register.js"></script>
+    <script type="module" src="./register.js"></script>
   </body>
 </html>

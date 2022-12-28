@@ -7,23 +7,23 @@ export const validationRegister = () => {
     const emailValue = email.value.trim();
     const emailRepeatValue = emailRepeat.value.trim();
    
-    const regularExpression =
+    const regularExpressionEmail =
       /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
   
     userNameValue.length < 6 || userNameValue.length > 16
-      ? setErrorFor(userName, 'Minimum 6 znaków, maximum 16 znaków')
+      ? setErrorFor(userName, 'Min. 6 znaków, max. 16 znaków')
       : setSuccesFor(userName);
   
     passwordValue.length < 6
       ? setErrorFor(password, 'Minimum 6 znaków')
       : setSuccesFor(password);
   
-    !regularExpression.test(emailValue)
+    !regularExpressionEmail.test(emailValue)
       ? setErrorFor(email, 'Podaj format email')
       : setSuccesFor(email);
   
     emailRepeatValue !== emailValue
-      ? setErrorFor(emailRepeat, 'Podaj ten sam email')
+      ? setErrorFor(emailRepeat, 'Powtórz email')
       : setSuccesFor(emailRepeat);
   };
   
