@@ -1,0 +1,60 @@
+@import "./generic/_reset.css";
+@import "./settings/_variables.css";
+@import "./settings/_typography.css";
+@import "./settings/_base.css";
+
+
+.wrapper--nav{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.nav__btnLeftSide, .nav__btnRightSide{
+    display: inline-block;
+}
+
+.nav__leftSide, .nav__rightSide{
+    margin-left: auto;
+}
+  
+.nav__rightSide{
+margin-top: var(--space-primary);  ;
+}
+
+.nav__btnLeftSide,.nav__btnRightSide{
+padding: 0.5em 1em;
+font-weight: var(--font-weight-bold);
+}
+
+.nav__btnLeftSide{
+font-size: 1rem;
+padding: 0.5em 1em;
+}
+
+.nav__btnLeftSide + .nav__btnLeftSide, .nav__btnRightSide + .nav__btnRightSide  {
+ margin-left: var(--space-primary); ; 
+}
+
+
+
+
+.nav__rightSide{
+
+}
+
+
+button {
+    /* font-family: var(--font-family-main) ; */
+  }
+
+
+/* @media (min-width: 769px){
+    .nav__btn{
+     color:red
+     }
+     .nav__rightSide{
+     }
+
+} */
+

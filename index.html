@@ -3,7 +3,8 @@
   <head>
     <title>Stuff</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
@@ -24,17 +25,26 @@
 
     <!-- <button><a href="/pages/login/login.html">logowanie</a></button> -->
 
-    <button href="#eng" class="english" data-reload>English</button>
-    <button href="#pl" class="polski" data-reload>Polski</button>
+    <nav class="nav">
+      <div class="wrapper wrapper--nav">
+        <aside class="nav__leftSide">
+          <button href="#eng" class="nav__btnLeftSide" data-reload>EN</button>
+          <button href="#pl" class="nav__btnLeftSide" data-reload>PL</button>
+        </aside>
 
-    <p>
-      <span id="userPrintName"></span>
-      <script>
-        localStorage.getItem('userName') &&
-          document.write(`Zalogowano: ${localStorage.getItem('userName')}`)
-      </script>
-    </p>
-
+        <aside class="nav__rightSide">
+          <p>
+            <span id="userPrintName"></span>
+            <script>
+              localStorage.getItem('userName') &&
+                document.write(
+                  `Zalogowano: ${localStorage.getItem('userName')}`,
+                )
+            </script>
+          </p>
+        </aside>
+      </div>
+    </nav>
     <script></script>
 
     <main class="main"></main>

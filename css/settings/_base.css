@@ -1,0 +1,16 @@
+.wrapper {
+  margin: 0 auto; 
+  width: clamp(280px, 100%, 1130px);
+  padding: 0 var(--space-primary); 
+}
+
+button,
+input {
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  display: block;
+  background-color: var(--color-primary);
+}
