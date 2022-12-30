@@ -3,6 +3,7 @@
   <head>
     <title>Stuff</title>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="index.css" />
   </head>
 
   <body>
@@ -23,20 +24,9 @@
 
     <!-- <button><a href="/pages/login/login.html">logowanie</a></button> -->
 
+    <button href="#eng" class="english" data-reload>English</button>
+    <button href="#pl" class="polski" data-reload>Polski</button>
 
-    <script>
-      !localStorage.getItem('userName') &&
-        document.write("<button  id = 'btnRegister'>Rejestracja</button>")
-
-      !localStorage.getItem('userName') &&
-        document.write("<button  id = 'btnLogin'>Logowanie</button>")
-
-      localStorage.getItem('userName') &&
-        document.write("<button  id = 'btnTransactions'>Transakcje</button>")
-
-      localStorage.getItem('userName') &&
-        document.write("  <button  id = 'btnLogout'>Wyloguj</button>  ")
-    </script>
     <p>
       <span id="userPrintName"></span>
       <script>
@@ -45,7 +35,13 @@
       </script>
     </p>
 
-    <script type="module" src="/router.js"></script>
-    <script src="./pages/home/home.js"></script>
+    <script></script>
+
+    <main class="main"></main>
+
+    <!-- <script type="module" src="/router.js"></script> -->
+
+    <script type="module" src="./pages/home/home.js"></script>
+    <script type="module" src="/languages.js"></script>
   </body>
 </html>

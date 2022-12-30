@@ -5,52 +5,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script type="module" src="./register.js"></script>
   </head>
   <body>
+
+    <button href="#eng" class="english" data-reload>English</button>
+    <button href="#pl" class="polski" data-reload>Polski</button>
+    
     <button>
       <a href="../login/login.html" onclick="route()">logowanie</a>
     </button>
 
     <p>
-  
       <span id="userPrintName"></span>
       <script>
-         localStorage.getItem('userName')&&
-        document.write(`Zalogowany: ${localStorage.getItem('userName')}`)
+        localStorage.getItem('userName') &&
+          document.write(`Zalogowany: ${localStorage.getItem('userName')}`)
       </script>
     </p>
 
-
     <form action="#">
-      <h2>zarejestruj</h2>
+      <h2 class="h2" id = "h2">Zarejestruj</h2>
 
       <div class="">
-        <label id="labelUsername">nazwa użytkowanika</label>
+        <label id="userNameLabel">Nazwa użytkowanika</label>
         <input type="text" id="userName" placeholder="nazwa" />
         <span class="errorUserName"></span>
       </div>
 
       <div class="">
-        <label>hasło</label>
+        <label id = "passwordLabel">Hasło</label>
         <input type="password" id="password" placeholder="hasło" />
         <span class="errorPassword"></span>
       </div>
 
       <div class="">
-        <label id="labelEmail">email</label>
+        <label id="emailLabel">Email</label>
         <input type="text" id="email" placeholder="email" />
         <span class="errorEmail"></span>
       </div>
 
       <div class="">
-        <label>potwierdź email</label>
+        <label id = "emailRepeatLabel">Potwierdź email</label>
         <input type="email" id="emailRepeat" placeholder="email" />
         <span class="errorEmailRepeat"></span>
       </div>
 
-      <button type="button" id="btnRegister">zarejestruj</button>
+      <button type="button" id="btnRegister">Zarejestruj</button>
     </form>
-
-    <script type="module" src="./register.js"></script>
+    <script type = "module" src = "languageRegister.js"></script>
   </body>
 </html>

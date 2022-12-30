@@ -1,28 +1,44 @@
-<button><a href="../register/register.html">rejestracja</a></button>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script type = "module" src="./login.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="_login.css" />
+  </head>
+  <body>
+    <button href="#eng" class="english" data-reload>English</button>
+    <button href="#pl" class="polski" data-reload>Polski</button>
+    <button><a href="../register/register.html">rejestracja</a></button>
 
-<form action="#">
+    <form action="#">
+      <h2 id = "h2">logowanie</h2>
 
-  <h2>logowanie</h2>
+      <p>
+        <span id="userPrintName"></span>
+        <script>
+          localStorage.getItem('userName') &&
+            document.write('Jesteś zalogowany')
+        </script>
+      </p>
 
-  <p>
-    <span id="userPrintName"></span>
-    <script>
-      localStorage.getItem('userName') && document.write('Jesteś zalogowany')
-    </script>
-  </p>
+      <div class="">
+        <label id = "userNameLabel">nazwa użytkowanika</label>
+        <input type="text" id="userName" placeholder="nazwa" />
+      </div>
 
-  <div class="">
-    <label>nazwa użytkowanika</label>
-    <input type="text" id="userName" placeholder="nazwa" />
-  </div>
+      <div class="">
+        <label id = "passwordLabel">hasło</label>
+        <input type="password" id="password" placeholder="hasło" />
+      </div>
 
-  <div class="">
-    <label>hasło</label>
-    <input type="password" id="password" placeholder="hasło" />
-  </div>
+      <button type="button" id="btnLogin">zaloguj</button>
+    </form>
 
-  <button type="button" id="btnLogin">zaloguj</button>
+    <script type = "module" src="./languagesLogin.js"></script>
+    <!-- <script type="module" src="../home/home.html"></script> -->
+  </body>
+</html>
 
-</form>
-
-<script src="./login.js"></script>

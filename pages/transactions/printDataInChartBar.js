@@ -26,8 +26,6 @@ export const printDataInChartBar = () => {
         return element + ' PLN';
       });
 
-      console.log(pln);
-
       return chartPrint(dates, balances);
     })
     .catch(err => {
