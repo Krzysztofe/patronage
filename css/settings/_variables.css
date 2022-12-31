@@ -2,9 +2,10 @@
 
 :root {
   --font-family-main: 'Open Sans', sans-serif;
+  --font-size-primary: 1.5rem;
   --font-weight-normal: 500;
   --font-weight-bold: 800;
- --space-primary: 3rem;
+  --space-primary: 2.5rem;
 
   --color-primary: rgb(200, 200, 200);
   --color-white: rgba(255, 255, 255, 1);

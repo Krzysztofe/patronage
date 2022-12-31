@@ -27,27 +27,28 @@
 
     <nav class="nav">
       <div class="wrapper wrapper--nav">
-        <aside class="nav__leftSide">
-          <button href="#eng" class="nav__btnLeftSide" data-reload>EN</button>
-          <button href="#pl" class="nav__btnLeftSide" data-reload>PL</button>
-        </aside>
+        <div class="nav__languages">
+          <a href="#eng" class="nav__btnLanguage" data-reload>EN</a>
+          <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+        </div>
 
-        <aside class="nav__rightSide">
-          <p>
-            <span id="userPrintName"></span>
-            <script>
-              localStorage.getItem('userName') &&
-                document.write(
-                  `Zalogowano: ${localStorage.getItem('userName')}`,
-                )
-            </script>
-          </p>
-        </aside>
+        <div class="nav__main"></div>
+
+        <div class="nav__loginPrint">
+          <script>
+            localStorage.getItem('userName') &&
+              document.write(`Zalogowano: ${localStorage.getItem('userName')}`)
+          </script>
+        </div>
       </div>
     </nav>
     <script></script>
 
-    <main class="main"></main>
+    <main class="main">
+      <div class="wrapper wrapper__main">
+        <h1 class="main__h1">Transactions</h1>
+      </div>
+    </main>
 
     <!-- <script type="module" src="/router.js"></script> -->
 

@@ -3,51 +3,83 @@
 @import "./settings/_typography.css";
 @import "./settings/_base.css";
 
-
-.wrapper--nav{
-    display: flex;
-    flex-direction: column;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+.nav {
+  background-color: rgba(255, 255, 255, 0.4);
 }
-.nav__btnLeftSide, .nav__btnRightSide{
-    display: inline-block;
-}
-
-.nav__leftSide, .nav__rightSide{
-    margin-left: auto;
-}
-  
-.nav__rightSide{
-margin-top: var(--space-primary);  ;
+.wrapper--nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+  padding-bottom: calc(3rem - var(--font-size-primary));
 }
 
-.nav__btnLeftSide,.nav__btnRightSide{
-padding: 0.5em 1em;
-font-weight: var(--font-weight-bold);
+.nav__languages {
+  margin-left: auto;
+}
+.nav__main {
+  margin-top: var(--space-primary);
+  display: flex;
+  width: 100%;
 }
 
-.nav__btnLeftSide{
-font-size: 1rem;
-padding: 0.5em 1em;
+.nav__btnLanguage,
+.nav__btnMineLine {
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  color: var(--color-black);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
-.nav__btnLeftSide + .nav__btnLeftSide, .nav__btnRightSide + .nav__btnRightSide  {
- margin-left: var(--space-primary); ; 
+.nav__btnLanguage + .nav__btnLanguage,
+.nav__btnMineLine + .nav__btnMineLine {
+  margin-left: var(--space-primary);
 }
 
-
-
-
-.nav__rightSide{
-
+.nav__btnLanguage {
+  font-size: 1.3rem;
+  padding: 0.5em 1em;
 }
 
+.nav__btnLanguage:hover {
+  animation-name: shake;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in;
+}
 
-button {
-    /* font-family: var(--font-family-main) ; */
+@keyframes shake {
+  0% {
+    transform: translate(0);
   }
+  20% {
+    transform: translate(1rem);
+  }
+  40% {
+    transform: translate(-1rem);
+  }
+  60% {
+    transform: translate(0.5rem);
+  }
+  80% {
+    transform: translate(-0.5rem);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
 
+.nav__btnMineLine {
+  padding: 0.5em 0;
+  width: 40%;
+  max-width: 150px;
+  text-align: center;
+  margin-left: auto;
+}
+
+.nav__loginPrint {
+  margin-left: auto;
+  height: var(--font-size-primary);
+  font-weight: var(--font-weight-bold);
+}
 
 /* @media (min-width: 769px){
     .nav__btn{
@@ -58,3 +90,15 @@ button {
 
 } */
 
+/* MAIN */
+
+.wrapper--main {
+}
+
+.main__h1 {
+  color: var(--color-white);
+  font-size: clamp(3rem, 10vw, 13rem);
+  letter-spacing: 0.5rem;
+  margin: 12vh auto;
+  text-align: center;
+}

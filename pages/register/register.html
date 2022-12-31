@@ -8,10 +8,11 @@
     <script type="module" src="./register.js"></script>
   </head>
   <body>
+    <div class="nav__languages">
+      <a href="#eng" class="nav__btnLanguage" data-reload>EN</a>
+      <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+    </div>
 
-    <button href="#eng" class="english" data-reload>English</button>
-    <button href="#pl" class="polski" data-reload>Polski</button>
-    
     <button>
       <a href="../login/login.html" onclick="route()">logowanie</a>
     </button>
@@ -25,7 +26,7 @@
     </p>
 
     <form action="#">
-      <h2 class="h2" id = "h2">Zarejestruj</h2>
+      <h2 class="h2" id="h2">Zarejestruj</h2>
 
       <div class="">
         <label id="userNameLabel">Nazwa użytkowanika</label>
@@ -34,7 +35,7 @@
       </div>
 
       <div class="">
-        <label id = "passwordLabel">Hasło</label>
+        <label id="passwordLabel">Hasło</label>
         <input type="password" id="password" placeholder="hasło" />
         <span class="errorPassword"></span>
       </div>
@@ -46,13 +47,13 @@
       </div>
 
       <div class="">
-        <label id = "emailRepeatLabel">Potwierdź email</label>
+        <label id="emailRepeatLabel">Potwierdź email</label>
         <input type="email" id="emailRepeat" placeholder="email" />
         <span class="errorEmailRepeat"></span>
       </div>
 
       <button type="button" id="btnRegister">Zarejestruj</button>
     </form>
-    <script type = "module" src = "languageRegister.js"></script>
+    <script type="module" src="languageRegister.js"></script>
   </body>
 </html>

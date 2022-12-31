@@ -1,33 +1,33 @@
-const nav = document.querySelector('.nav__rightSide');
+const nav = document.querySelector('.nav__main');
 
-const btnRegisterLink = document.createElement('button');
+const btnRegisterLink = document.createElement('a');
 btnRegisterLink.innerText = `Rejestracja`;
 btnRegisterLink.id = 'btnRegisterLink';
-btnRegisterLink.className = 'nav__btnRightSide'
+btnRegisterLink.className = 'nav__btnMineLine'
 
 
-const btnLoginLink = document.createElement('button');
+const btnLoginLink = document.createElement('a');
 btnLoginLink.innerText = 'Login';
 btnLoginLink.id = 'btnLoginLink';
-btnLoginLink.className = 'nav__btnRightSide'
+btnLoginLink.className = 'nav__btnMineLine'
 
-const btnTransactions = document.createElement('button');
+const btnTransactions = document.createElement('a');
 btnTransactions.innerText = 'Transakcje';
 btnTransactions.id = 'btnTransactions';
-btnTransactions.className = 'nav__btnRightSide'
+btnTransactions.className = 'nav__btnMineLine'
 
-const btnLogout = document.createElement('button');
+const btnLogout = document.createElement('a');
 btnLogout.innerText = 'Wyloguj';
 btnLogout.id = 'btnLogout';
-btnLogout.className = 'nav__btnRightSide'
+btnLogout.className = 'nav__btnMineLine'
 
-!localStorage.getItem('userName') && nav.append(btnRegisterLink);
+!localStorage.getItem('userName') && nav.prepend(btnRegisterLink);
 
-!localStorage.getItem('userName') && nav.append(btnLoginLink);
+!localStorage.getItem('userName') && nav.prepend(btnLoginLink);
 
-localStorage.getItem('userName') && nav.append(btnTransactions);
+localStorage.getItem('userName') && nav.prepend(btnTransactions);
 
-localStorage.getItem('userName') && nav.append(btnLogout);
+localStorage.getItem('userName') && nav.prepend(btnLogout);
 
 btnRegisterLink?.addEventListener('click', () => {
   
