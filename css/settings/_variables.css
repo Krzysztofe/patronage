@@ -7,7 +7,7 @@
   --font-weight-bold: 800;
   --space-primary: 2.5rem;
 
-  --color-primary: rgb(200, 200, 200);
+  --color-primary: rgba(28,90,88, 1);
   --color-white: rgba(255, 255, 255, 1);
   --color-black: rgba(0, 0, 0, 1);
 }

@@ -3,43 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <script type="module" src="./login.js"></script>
+    <!-- <script type="module" src="./login.js"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="_login.css" />
   </head>
   <body>
-    <div class="nav__languages">
-      <a href="#eng" class="nav__btnLanguage" data-reload>EN</a>
-      <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
-    </div>
-    <button><a href="../register/register.html">rejestracja</a></button>
+    <nav class="nav">
+      <div class="wrapper wrapper--nav">
+        <div class="nav__languages">
+          <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
+          <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+        </div>
 
-    <form action="#">
-      <h2 id="h2">logowanie</h2>
+        <div class="nav__main">
+          <a
+            href="../register/register.html"
+            id="btnRegisterLink"
+            class="nav__btnMineLine"
+          >
+            Rejestracja
+          </a>
+        </div>
 
-      <p>
-        <span id="userPrintName"></span>
-        <script>
-          localStorage.getItem('userName') &&
-            document.write('Jesteś zalogowany')
-        </script>
-      </p>
-
-      <div class="">
-        <label id="userNameLabel">nazwa użytkowanika</label>
-        <input type="text" id="userName" placeholder="nazwa" />
+        <div class="nav__loginPrint">
+          <script>
+            const printText =
+              window.location.hash === '#eng'
+                ? `Loged: ${localStorage.getItem('userName')}`
+                : `Zalogowano: ${localStorage.getItem('userName')}`
+            localStorage.getItem('userName') && document.write(printText)
+          </script>
+        </div>
       </div>
+    </nav>
 
-      <div class="">
-        <label id="passwordLabel">hasło</label>
-        <input type="password" id="password" placeholder="hasło" />
+    <main class="main">
+      <div class="wrapper wrapper-form">
+        <div class="main__formOutline">
+          <form class="form" action="#">
+            <h2 id="h2">Logowanie</h2>
+
+            <div class="inputContainer">
+              <label class="inputLabel" id="userNameLabel">Nazwa użytkowanika</label>
+              <input   class="input" type="text" autofocus id="userName" placeholder="Nazwa" />
+            </div>
+
+            <div class="inputContainer">
+              <label class="inputLabel" id="passwordLabel">Hasło</label>
+              <input class="input" type="password" id="password" placeholder="Hasło" />
+            </div>
+
+            <button class="btn__submit" type="button" id="btnLogin">Zaloguj</button>
+          </form>
+        </div>
       </div>
-
-      <button type="button" id="btnLogin">zaloguj</button>
-    </form>
+    </main>
 
     <script type="module" src="./languagesLogin.js"></script>
     <!-- <script type="module" src="../home/home.html"></script> -->
+    <script type="module" src="./login.js"></script>
   </body>
 </html>

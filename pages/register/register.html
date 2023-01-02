@@ -3,57 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./register.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type="module" src="./register.js"></script>
   </head>
   <body>
-    <div class="nav__languages">
-      <a href="#eng" class="nav__btnLanguage" data-reload>EN</a>
-      <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
-    </div>
+    <nav class="nav">
+      <div class="wrapper wrapper--nav">
+        <div class="nav__languages">
+          <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
+          <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+        </div>
 
-    <button>
-      <a href="../login/login.html" onclick="route()">logowanie</a>
-    </button>
-
-    <p>
-      <span id="userPrintName"></span>
-      <script>
-        localStorage.getItem('userName') &&
-          document.write(`Zalogowany: ${localStorage.getItem('userName')}`)
-      </script>
-    </p>
-
-    <form action="#">
-      <h2 class="h2" id="h2">Zarejestruj</h2>
-
-      <div class="">
-        <label id="userNameLabel">Nazwa użytkowanika</label>
-        <input type="text" id="userName" placeholder="nazwa" />
-        <span class="errorUserName"></span>
+        <div class="nav__main">
+          <a
+            href="../login/login.html"
+            id="btnLoginLink"
+            class="nav__btnMineLine"
+          >
+            Logowanie
+          </a>
+        </div>
+        <div class="nav__loginPrint"></div>
       </div>
+    </nav>
 
-      <div class="">
-        <label id="passwordLabel">Hasło</label>
-        <input type="password" id="password" placeholder="hasło" />
-        <span class="errorPassword"></span>
+    <main class="main">
+      <div class="wrapper wrapper-form">
+        <div class="main__formOutline">
+          <form class="form" action="#">
+            <h2 class="h2" id="h2">Rejestracja</h2>
+            <div class="inputContainer">
+              <label class="inputLabel" id="userNameLabel">
+                Nazwa użytkowanika
+              </label>
+              <input
+                type="text"
+                class="input"
+                autofocus
+                id="userName"
+                placeholder="Nazwa"
+              />
+              <div class="error errorUserName"></div>
+            </div>
+            <div class="inputContainer">
+              <label class="inputLabel" id="passwordLabel">Hasło</label>
+              <input
+                type="password"
+                class="input"
+                id="password"
+                placeholder="Hasło"
+              />
+              <div class="error errorPassword"></div>
+            </div>
+
+            <div class="inputContainer">
+              <label class="inputLabel" id="emailLabel">Email</label>
+              <input type="text" class="input" id="email" placeholder="Email" />
+              <div class="error errorEmail"></div>
+            </div>
+            <div class="inputContainer">
+              <label class="inputLabel" id="emailRepeatLabel">
+                Potwierdź email
+              </label>
+              <input
+                type="email"
+                class="input"
+                id="emailRepeat"
+                placeholder="Email"
+              />
+              <div class="error errorEmailRepeat"></div>
+            </div>
+            <button class="btn__submit" type="button" id="btnRegister">
+              Zarejestruj
+            </button>
+          </form>
+        </div>
       </div>
+    </main>
 
-      <div class="">
-        <label id="emailLabel">Email</label>
-        <input type="text" id="email" placeholder="email" />
-        <span class="errorEmail"></span>
-      </div>
-
-      <div class="">
-        <label id="emailRepeatLabel">Potwierdź email</label>
-        <input type="email" id="emailRepeat" placeholder="email" />
-        <span class="errorEmailRepeat"></span>
-      </div>
-
-      <button type="button" id="btnRegister">Zarejestruj</button>
-    </form>
     <script type="module" src="languageRegister.js"></script>
   </body>
 </html>

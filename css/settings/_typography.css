@@ -1,5 +1,5 @@
 html {
   font-family: var(--font-family-main);
-  font-size: 62.5%;
+  font-size: clamp(5px, 3vw, 62.5%);
 }
 

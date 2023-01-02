@@ -1,5 +1,7 @@
 import { language } from "../../data/languagesData.js";
 
+console.log('ooooo')
+
 document.addEventListener('DOMContentLoaded', () => {
   localStorage.getItem('userName') &&
     (window.location.href = '../transactions/transactions.html');

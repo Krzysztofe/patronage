@@ -26,4 +26,7 @@ button:hover, a:hover {
     outline: 1px solid var(--color-white);
 }
 
+button:focus, a:focus {
+  outline: 1px solid var(--color-white);
+}
 

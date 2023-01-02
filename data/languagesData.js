@@ -5,12 +5,14 @@ export let language = {
       loginLink: 'Login',
       transactions: 'Transactions',
       btnLogout: 'Logout',
+      h1: "Transactions"
     },
 
     pageLogin: {
+      registerLink: "Register",
       h2: 'Login',
       userName: 'User name',
-      userNamePlaceholder: 'User name',
+      userNamePlaceholder: 'Name',
       password: 'Password',
       passwordPlaceholder: 'Password',
       btnLogin: 'Login',
@@ -18,21 +20,22 @@ export let language = {
     },
 
     pageRegister: {
+      loginLink: 'Login',
       h2: 'Register',
       userNameLabel: 'User name',
-      userNamePlaceholder: 'user name',
+      userNamePlaceholder: 'Name',
       userNameError: 'Min. 6 characters, max. 16 characters',
 
       passwordLabel: 'Password',
-      passwordPlaceholder: 'password',
+      passwordPlaceholder: 'Password',
       passwordError: 'Min. 6 characters',
 
       emaiLabel: 'Email',
-      emailPlaceholder: 'email',
+      emailPlaceholder: 'Email',
       emailError: 'Corect email format',
 
-      emailRepeatLabel: 'Repeat email',
-      emailRepeatPlacecholder: 'email repeat',
+      emailRepeatLabel: 'Email repeat',
+      emailRepeatPlacecholder: 'Email repeat',
       emailRepeatError: "Repeat email",
 
       btnRegister: 'Register',

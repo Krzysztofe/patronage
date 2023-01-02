@@ -1,0 +1,67 @@
+
+.nav {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid  rgba(255, 255, 255, 0.4);
+}
+.wrapper--nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+  padding-bottom: calc(3rem - var(--font-size-primary));
+}
+
+.nav__languages {
+  margin-left: auto;
+}
+.nav__main {
+  margin-top: var(--space-primary);
+  display: flex;
+  width: 100%;
+}
+
+.nav__btnLanguage,
+.nav__btnMineLine {
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  color: var(--color-black);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.nav__btnLanguage:hover,
+.nav__btnMineLine:hover{
+    color: var(--color-white);
+}
+
+.nav__btnLanguage--active{
+  color: var(--color-white);
+  outline: 1px solid var(--color-white);
+}
+
+
+
+.nav__btnLanguage + .nav__btnLanguage,
+.nav__btnMineLine + .nav__btnMineLine {
+  margin-left: var(--space-primary);
+}
+
+.nav__btnLanguage {
+  font-size: 1.3rem;
+  padding: 0.5em 1em;
+}
+
+.nav__btnMineLine {
+  padding: 0.5em 0;
+  width: 40%;
+  max-width: 150px;
+  text-align: center;
+  margin-left: auto;
+}
+
+
+.nav__loginPrint {
+  margin-top: 0.5rem;
+  margin-left: auto;
+  height: var(--font-size-primary);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}

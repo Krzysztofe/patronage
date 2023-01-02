@@ -8,27 +8,24 @@
   </head>
 
   <body>
-    <!-- <ul>
-<li value = "home">Home</li>
-<li value = "login">login</li>
-<li value = "logout">logout</li>
-<li value = "register">register</li>
-</ul> -->
-    <!-- <button><a href="/pages/register.html"> register</a></button> -->
 
-    <!-- <div id="root">
+<!-- <a href = "/" onclick="route()" >home</a>
+<a href = "/login" onclick="route()">login</a>
+<a href = "/register" onclick="route()">register</a>
+
+    <div id="root">
  
     <div id="main-page"> 
         
     </div>
 </div> -->
 
-    <!-- <button><a href="/pages/login/login.html">logowanie</a></button> -->
+  
 
     <nav class="nav">
       <div class="wrapper wrapper--nav">
         <div class="nav__languages">
-          <a href="#eng" class="nav__btnLanguage" data-reload>EN</a>
+          <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
           <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
         </div>
 
@@ -36,23 +33,26 @@
 
         <div class="nav__loginPrint">
           <script>
-            localStorage.getItem('userName') &&
-              document.write(`Zalogowano: ${localStorage.getItem('userName')}`)
+            const printText =
+              window.location.hash === '#eng'
+                ? `Loged: ${localStorage.getItem('userName')}`
+                : `Zalogowano: ${localStorage.getItem('userName')}`
+            localStorage.getItem('userName') && document.write(printText)
           </script>
         </div>
       </div>
     </nav>
-    <script></script>
 
     <main class="main">
       <div class="wrapper wrapper__main">
-        <h1 class="main__h1">Transactions</h1>
+        <h1 class="main__h1">Transakcje</h1>
       </div>
     </main>
 
-    <!-- <script type="module" src="/router.js"></script> -->
+    <script type="module" src="/router.js"></script>
 
     <script type="module" src="./pages/home/home.js"></script>
     <script type="module" src="/languages.js"></script>
+  
   </body>
 </html>

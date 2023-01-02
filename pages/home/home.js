@@ -7,7 +7,7 @@ btnRegisterLink.className = 'nav__btnMineLine'
 
 
 const btnLoginLink = document.createElement('a');
-btnLoginLink.innerText = 'Login';
+btnLoginLink.innerText = 'Logowanie';
 btnLoginLink.id = 'btnLoginLink';
 btnLoginLink.className = 'nav__btnMineLine'
 

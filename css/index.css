@@ -2,84 +2,9 @@
 @import "./settings/_variables.css";
 @import "./settings/_typography.css";
 @import "./settings/_base.css";
+@import "./elements/_nav.css";
 
-.nav {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-.wrapper--nav {
-  display: flex;
-  flex-direction: column;
-  padding-top: 3rem;
-  padding-bottom: calc(3rem - var(--font-size-primary));
-}
 
-.nav__languages {
-  margin-left: auto;
-}
-.nav__main {
-  margin-top: var(--space-primary);
-  display: flex;
-  width: 100%;
-}
-
-.nav__btnLanguage,
-.nav__btnMineLine {
-  font-weight: var(--font-weight-bold);
-  text-decoration: none;
-  color: var(--color-black);
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.nav__btnLanguage + .nav__btnLanguage,
-.nav__btnMineLine + .nav__btnMineLine {
-  margin-left: var(--space-primary);
-}
-
-.nav__btnLanguage {
-  font-size: 1.3rem;
-  padding: 0.5em 1em;
-}
-
-.nav__btnLanguage:hover {
-  animation-name: shake;
-  animation-duration: 0.2s;
-  animation-timing-function: ease-in;
-}
-
-@keyframes shake {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(1rem);
-  }
-  40% {
-    transform: translate(-1rem);
-  }
-  60% {
-    transform: translate(0.5rem);
-  }
-  80% {
-    transform: translate(-0.5rem);
-  }
-  100% {
-    transform: translate(0);
-  }
-}
-
-.nav__btnMineLine {
-  padding: 0.5em 0;
-  width: 40%;
-  max-width: 150px;
-  text-align: center;
-  margin-left: auto;
-}
-
-.nav__loginPrint {
-  margin-left: auto;
-  height: var(--font-size-primary);
-  font-weight: var(--font-weight-bold);
-}
 
 /* @media (min-width: 769px){
     .nav__btn{

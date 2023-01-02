@@ -44,12 +44,12 @@ export const validationRegister = () => {
 
 const setErrorFor = (input, message) => {
   const inputContainer = input.parentElement;
-  const errorDiv = inputContainer.querySelector('span');
+  const errorDiv = inputContainer.querySelector('div');
   errorDiv.innerText = message;
 };
 
 const setSuccesFor = input => {
   const inputContainer = input.parentElement;
-  const errorDiv = inputContainer.querySelector('span');
+  const errorDiv = inputContainer.querySelector('div');
   errorDiv.innerText = '';
 };
