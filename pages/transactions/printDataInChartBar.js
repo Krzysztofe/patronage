@@ -1,4 +1,4 @@
-import { API_URL, API_KEY } from '../../data/URL.js';
+import { API_URL} from '../../data/URL.js';
 import { sendHTTPRequest } from '../../utils/sentHTTPRequest.js';
 
 export const printDataInChartBar = () => {
@@ -7,34 +7,31 @@ export const printDataInChartBar = () => {
   message.innerText = 'loading';
   chartBarContainer.append(message);
 
-  sendHTTPRequest(API_URL, API_KEY)
+  sendHTTPRequest( API_URL)
     .then(data => {
       message.remove();
-      const dates = data.record.transactions
+      
+      const dates = data.transactions
         .map(transaction => {
           return transaction.date;
-        })
-        .reverse();
+        }).reverse();
 
-      let balances = data.record.transactions.map(transaction => {
+      const balances = data.transactions.map(transaction => {
         return transaction.balance;
       });
-      const pushNewDates = dates.push(2022, 2023);
-      const pushNegativeBalances = balances.push(-3000, -1000);
-
-      const pln = balances.map(element => {
-        return element + ' PLN';
-      });
+      
+      dates.push(2022, 2023);
+      balances.push(-3000, -1000);
 
       return chartPrint(dates, balances);
     })
     .catch(err => {
-      message.innerHTML = `<p>${err} ${err.data.message}</p>`;
+      message.innerHTML = `<p>${err} ${err.data?.message}</p>`;
       chartBarContainer.append(message);
     });
 };
 
-const dataArr = [20, 30, -80, 70];
+
 
 const chartPrint = (x_Param, y_Param) => {
   let chart = document.getElementById('chartBar').getContext('2d');
@@ -42,17 +39,17 @@ const chartPrint = (x_Param, y_Param) => {
   let balancesChart = new Chart(chart, {
     type: 'bar',
     data: {
-      labels: [1, 2, 3, 4],
+      labels: x_Param,
       datasets: [
         {
           label: 'Saldo',
-          data: dataArr,
+          data: y_Param,
           backgroundColor: barBackgroundColor(),
         },
       ],
     },
     options: {
-      tooltips: { mode: 'index' },
+      // tooltips: { mode: 'index' },
       scales: {
         y: {
           // beginAtZero: true,
@@ -84,4 +81,3 @@ const barBackgroundColor = () => {
   };
 };
 
-chartPrint();

@@ -43,16 +43,18 @@
       <div class="wrapper wrapper-form">
         <div class="main__formOutline">
           <form class="form" action="#">
-            <h2 id="h2">Logowanie</h2>
+            <h2 class = "h2" id="h2">Logowanie</h2>
 
             <div class="inputContainer">
               <label class="inputLabel" id="userNameLabel">Nazwa użytkowanika</label>
               <input   class="input" type="text" autofocus id="userName" placeholder="Nazwa" />
+              <div class="error errorUserName"></div>
             </div>
 
             <div class="inputContainer">
-              <label class="inputLabel" id="passwordLabel">Hasło</label>
-              <input class="input" type="password" id="password" placeholder="Hasło" />
+              <label class="inputLabel" id="passwordLabel">Hasło / Email</label>
+              <input class="input" type="password" id="password" placeholder="Hasło / Email" />
+              <div class="error errorPassword"></div>
             </div>
 
             <button class="btn__submit" type="button" id="btnLogin">Zaloguj</button>

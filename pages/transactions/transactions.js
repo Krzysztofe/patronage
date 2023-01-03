@@ -1,25 +1,15 @@
-import { printDataInTable } from './printDataInTable.js';
-import { printDataInChartBar } from './printDataInChartBar.js';
-import { printDataInDought } from './printDataInChartDought.js';
+import { printDataInTable } from "./printDataInTable.js";
+import { printDataInChartBar } from "./printDataInChartBar.js";
+import { printDataInDought } from "./printDataInChartDought.js";
 
-const btn = document.getElementById('btnLogout');
+const btn = document.getElementById("btnLogout");
 
-btn.addEventListener('click', () => {
-  logout();
+!localStorage.getItem("userName") &&  (window.location.href = "../login/login.html")
+
+btn.addEventListener("click", () => {
+  localStorage.removeItem("userName");
+  window.location.href = "../../index.html";
 });
-
-// let userNameinLocalStorage = localStorage.getItem('userName') || '';
-
-// if (userNameinLocalStorage === '') {
-//   alert('musisz sie zalogowac');
-//   window.location.href = '../login/login.html';
-// }
-
-const logout = () => {
-  localStorage.removeItem('userName');
-  // window.location.href = "../home/home.html"
-  window.location.href = '../../index.html';
-};
 
 printDataInDought();
 printDataInTable();

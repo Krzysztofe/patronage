@@ -27,7 +27,7 @@
     rgb(255, 255, 255)
   );
 
-  animation: anim 15s linear infinite;
+  /* animation: anim 15s linear infinite; */
 }
 
 @keyframes anim {

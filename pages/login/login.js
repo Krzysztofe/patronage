@@ -1,46 +1,27 @@
-import { language } from "../../data/languagesData.js";
+import { validationLogin } from "./validationLogin.js";
 
-console.log('ooooo')
+document.addEventListener("DOMContentLoaded", () => {
+  localStorage.getItem("userName") &&
+    (window.location.href = "../transactions/transactions.html");
 
-document.addEventListener('DOMContentLoaded', () => {
-  localStorage.getItem('userName') &&
-    (window.location.href = '../transactions/transactions.html');
-  const btn = document.getElementById('btnLogin');
+  const btn = document.getElementById("btnLogin");
 
-  btn.addEventListener('click', () => {
+  btn.addEventListener("click", () => {
+    if (validationLogin().length !== 0) return;
     saveData();
-    userName.value = '';
-    password.value = '';
+    userName.value = "";
+    password.value = "";
   });
 
   const saveData = () => {
-    const userName = document.getElementById('userName').value;
-    const password = document.getElementById('password').value;
+    const userNameValue = document.getElementById("userName").value.trim()
+    const usersData = JSON.parse(localStorage.getItem("users")) || [];
 
-    const userData = JSON.parse(localStorage.getItem('users')) || [];
-
-    if (
-      !userData.some(i => i.userName === userName && i.password === password)
+    if ( usersData.some( i => i.userName === userNameValue)
     ) {
-      if (window.location.hash) {
-        if (window.location.hash === '#eng') {
-          alert(`${language.eng.pageLogin.alert}`);
-          return;
-        }
-      }
-
-      alert('Podaj zarejestrowaną nazwę użytkownika i zarejestrowane hasło');
-      return;
-    }
-
-    if (
-      userData.some(i => i.userName === userName && i.password === password)
-    ) {
-      let logedUser = userData.filter(
-        i => i.userName === userName && i.password === password
-      )[0];
-      localStorage.setItem('userName', logedUser.userName);
-      window.location.href = '../transactions/transactions.html';
+      let logedUser = usersData.filter(i => i.userName === userNameValue)[0];
+      localStorage.setItem("userName", logedUser.userName);
+      window.location.href = "../transactions/transactions.html";
     }
   };
 });

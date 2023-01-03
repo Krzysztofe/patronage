@@ -1,4 +1,4 @@
-import { API_URL, API_KEY } from '../../data/URL.js';
+import { API_URL } from '../../data/URL.js';
 import { sendHTTPRequest } from '../../utils/sentHTTPRequest.js';
 
 export const printDataInDought = () => {
@@ -8,11 +8,11 @@ export const printDataInDought = () => {
   message.innerText = 'loading';
   chartDoughtContainer.append(message);
 
-  sendHTTPRequest(API_URL, API_KEY)
+  sendHTTPRequest(API_URL)
     .then(data => {
       message.remove();
-      const transactions = data.record.transactions;
-      const transacationTypes = data.record.transacationTypes;
+      const transactions = data.transactions;
+      const transacationTypes = data.transacationTypes;
       const typesList = transactions.map(i => {
         switch (i.type) {
           case 1:
@@ -40,7 +40,7 @@ export const printDataInDought = () => {
       return chartPrint(transactionsNames, transactionsRepeatitions);
     })
     .catch(err => {
-      message.innerHTML = `<p>${err} ${err.data.message}</p>`;
+      message.innerHTML = `<p>${err} ${err.data?.message}</p>`;
       chartDoughtContainer.append(message);
     });
 };
@@ -54,6 +54,7 @@ const chartPrint = (x_Param, y_Param) => {
       labels: x_Param,
       datasets: [{ label: 'Saldo', data: y_Param }],
     },
-    options: { tooltips: { mode: 'index' } },
+    // options: { tooltips: { mode: 'index' } },
   });
 };
+
