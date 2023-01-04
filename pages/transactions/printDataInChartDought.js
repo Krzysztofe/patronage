@@ -4,13 +4,13 @@ import { sendHTTPRequest } from '../../utils/sentHTTPRequest.js';
 export const printDataInDought = () => {
 
   const chartDoughtContainer = document.querySelector('.chartDoughtContainer');
-  const message = document.createElement('div');
-  message.innerText = 'loading';
-  chartDoughtContainer.append(message);
+//   const message = document.createElement('div');
+//   message.innerText = 'loading';
+//   chartDoughtContainer.append(message);
 
   sendHTTPRequest(API_URL)
     .then(data => {
-      message.remove();
+    //   message.remove();
       const transactions = data.transactions;
       const transacationTypes = data.transacationTypes;
       const typesList = transactions.map(i => {
@@ -54,7 +54,11 @@ const chartPrint = (x_Param, y_Param) => {
       labels: x_Param,
       datasets: [{ label: 'Saldo', data: y_Param }],
     },
-    // options: { tooltips: { mode: 'index' } },
+    options: { 
+        // tooltips: { mode: 'index' }
+        responsive: true,
+        mantainAspectRAtio: false,
+    },
   });
 };
 

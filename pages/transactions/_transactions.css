@@ -1,0 +1,82 @@
+@import "../../css/generic/_reset.css";
+@import "../../css/settings/_variables.css";
+@import "../../css/settings/_typography.css";
+@import "../../css/settings/_base.css";
+@import "../../css/elements/_nav.css";
+@import "./_charts.css";
+
+
+.wrapper--sectionTable{
+
+}
+
+.table{
+    margin: var(--space-primary) auto;
+    border-collapse: collapse;
+background-color: var(--color-white);
+}
+
+thead{
+
+ 
+}
+
+
+.table__theadRow{
+
+    text-align: left;
+    font-weight: var(--font-weight-bold);
+
+}
+.table__th{
+
+}
+
+.table__tbodyRow{
+border-bottom: 1px solid var(--color-black);
+
+}
+
+.displayAllRow{
+    color: red
+}
+
+
+
+.table__tbodyRow:nth-of-type(even) {
+    background-color: bisque;
+}
+
+
+
+.table__td, .table__th{
+    padding: 0.2rem 0.5rem;
+    width: fit-content;
+}
+
+small{
+    font-size: 1rem;
+    font-weight: var(--font-weight-bold);
+}
+
+ .table__desktopPrint{
+    display: none;
+}
+  
+.table__clickPrint{
+  
+    display: block;
+   width: 40px;
+}
+
+
+
+@media (min-width: 769px){
+    .table__desktopPrint{
+        display: block;
+    }   
+
+
+}
+
+

@@ -1,5 +1,5 @@
-import { API_URL } from '../../data/URL.js';
-import { sendHTTPRequest } from '../../utils/sentHTTPRequest.js';
+import { API_URL } from "../../data/URL.js";
+import { sendHTTPRequest } from "../../utils/sentHTTPRequest.js";
 
 const iconPrintType = type => {
   switch (type) {
@@ -21,44 +21,56 @@ const iconPrintType = type => {
 const typeDescription = type => {
   switch (type) {
     case 1:
-      return 'Wpływy - inne';
+      return "Wpływy - inne";
       break;
     case 2:
-      return 'Wydatki - zakupy';
+      return "Wydatki - zakupy";
       break;
     case 3:
-      return 'Wpływy - wynagrodzenie';
+      return "Wpływy - wynagrodzenie";
       break;
     case 4:
-      return 'Wydatki - inne';
+      return "Wydatki - inne";
       break;
   }
 };
 
 export const printDataInTable = () => {
-  document.querySelector('tbody').innerHTML = '<p>loading</p>';
+  document.querySelector("tbody").innerHTML = "<p>loading</p>";
 
   sendHTTPRequest(API_URL)
     .then(data => data.transactions)
     .then(transactions => {
-      let tablePatern = '';
+      let tablePatern = "";
       transactions.forEach(transaction => {
-        tablePatern += `<tr>
-      <td>${transaction.date}</td>
-      <td>${iconPrintType(transaction.type)}</td>
-       <td>${transaction.description} <br/> <b> ${typeDescription(
-          transaction.type
-        )}</b></td>
-       <td>${transaction.amount}</td>
-       <td>${transaction.balance}</td>
+        tablePatern += 
+
+        `<tr class = "table__tbodyRow" >
+         <td class = "table__td table__desktopPrint">${transaction.date}</td>
+         <td class = "table__td">${iconPrintType(transaction.type)}</td>
+         <td class = "table__td">${transaction.description} <br/> 
+         <small>${typeDescription(transaction.type)}<small></td>
+          <td class = "table__td">${transaction.amount}</td>
+         <td class = "table__td table__desktopPrint">${transaction.balance}</td>
        </tr>`;
       });
 
-      document.getElementById('tbody').innerHTML = tablePatern;
+      document.getElementById("tbody").innerHTML = tablePatern;
+     
+      const rows = document.querySelectorAll(".table__tbodyRow")
+      const row = document.querySelector(".table__tbodyRow").lastElementChild
+  const tableCells = document.querySelectorAll('.table__desktopPrint ')
+      rows.forEach(row => row.addEventListener("click", () => {
+  return row.lastElementChild.classList.toggle("table__clickPrint")
+  }))
+
+
+  console.log(row)
     })
     .catch(err => {
       document.querySelector(
-        'table'
+        "table"
       ).innerHTML = `<p>${err} ${err.data?.message}</p>`;
     });
 };
+    

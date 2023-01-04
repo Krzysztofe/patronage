@@ -11,33 +11,66 @@ export const validationLogin = () => {
   let errorsCounter = [];
 
   const registeredData = usersData.some(
-    i =>
-      i.userName === userNameValue &&
-      (i.password === passwordValue || i.email === passwordValue)
+    user =>
+      user.userName === userNameValue &&
+      (user.password === passwordValue || user.email === passwordValue)
   );
 
   const unregisteredEmail =
-    !usersData.some(i => i.email === passwordValue) &&
+    !usersData.some(user => user.email === passwordValue) &&
     regularExpressionEmail.test(passwordValue);
 
-    const registeredEmail = usersData.some(i => i.email === passwordValue)
+  //   if (!registeredData) {
+  //     if (window.location.hash === "#eng") {
+  //       errorUserName.innerText = language.eng.pageLogin.userNameError;
+  //       errorPassword.innerText = language.eng.pageLogin.passwordError;
+  //       unregisteredEmail && alert(language.eng.pageLogin.alertUnregisteredEmail);
+  //       registeredEmail && alert(language.eng.pageLogin.alertRegisteredEmail);
+  //     } else {
+  //       errorUserName.innerText = "Podaj nazwę przypisaną do emaila";
+  //       errorPassword.innerText = "Podaj hasło lub email przypisane do nazwy";
+  //       unregisteredEmail &&
+  //         alert("Email niezarejsetrowany możliwy do zarejestrowania ");
+  //       registeredEmail && alert("Email zarejesrtowany");
+  //     }
+  //     errorsCounter.push(1);
+  //   } else {
+  //     errorUserName.innerText = "";
+  //     errorPassword.innerText = "";
+  //   }
+
+  const languageKey = window.location.hash === "#eng" ? "eng" : "pl";
 
   if (!registeredData) {
-    if (window.location.hash === "#eng") {
-      errorUserName.innerText = language.eng.pageLogin.userNameError;
-      errorPassword.innerText = language.eng.pageLogin.passwordError;
-      unregisteredEmail && alert(language.eng.pageLogin.alert);
-      registeredEmail && alert("ppp")
-    } else {
-      errorUserName.innerText = "Podaj nazwę przypisaną do emaila";
-      errorPassword.innerText = "Podaj hasło lub email przypisane do nazwy";
-      unregisteredEmail && alert("Email niezarejsetrowany możliwy do zarejestrowania ");
-      registeredEmail && alert ("Email zarejesrtowany")
-      }
+    errorUserName.innerText = "Podaj nazwę przypisaną do emaila";
+    errorPassword.innerText = "Podaj hasło lub email przypisane do nazwy";
     errorsCounter.push(1);
-  } else {
+  }
+  if (registeredData) {
     errorUserName.innerText = "";
     errorPassword.innerText = "";
   }
+
+  if (unregisteredEmail) {
+    alert("email mozliwy do rejestracji");
+  }
   return errorsCounter;
 };
+
+// if (!registeredData) {
+//     if (window.location.hash === "#eng") {
+//       errorUserName.innerText = language.eng.pageLogin.userNameError;
+//       errorPassword.innerText = language.eng.pageLogin.passwordError;
+//       unregisteredEmail && alert(language.eng.pageLogin.alert);
+//       registeredEmail && alert("ppp")
+//     } else {
+//       errorUserName.innerText = "Podaj nazwę przypisaną do emaila";
+//       errorPassword.innerText = "Podaj hasło lub email przypisane do nazwy";
+//       unregisteredEmail && alert("Email niezarejsetrowany możliwy do zarejestrowania ");
+//
+//       }
+//     errorsCounter.push(1);
+//   } else {
+//     errorUserName.innerText = "";
+//     errorPassword.innerText = "";
+//   }

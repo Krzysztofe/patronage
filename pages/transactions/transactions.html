@@ -5,50 +5,88 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./_transactions.css" />
     <script
       src="https://kit.fontawesome.com/f3b0ddb395.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-    <button id="btnLogout">
-      <!-- <a href="/pages/home/home.html"> -->
-      wyloguj
+    <nav class="nav">
+      <div class="wrapper wrapper--nav">
+        <div class="nav__languages">
+          <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
+          <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+        </div>
 
-      <!-- </a> -->
-    </button>
+        <div class="nav__main">
+          <a id="btnLogout" class="nav__btnMineLine">
+            Wyloguj
+          </a>
+        </div>
 
-    tranzakcje
+        <div class="nav__loginPrint">
+          <script>
+            const printText =
+              window.location.hash === '#eng'
+                ? `Loged: ${localStorage.getItem('userName')}`
+                : `Zalogowano: ${localStorage.getItem('userName')}`
+            localStorage.getItem('userName') && document.write(printText)
+          </script>
+        </div>
+      </div>
+    </nav>
 
-    <p>
-      <span id="userPrintName"></span>
-      <script>
-         document.write(`Zalogowano: ${localStorage.getItem('userName')}`)
-      </script>
-    </p>
+    <section>
+      <div class="wrapper wrapper--sectionCharts">  
+<div class="sectionCharts__container">
+        <div class="sectionCharts__slider">
+          <div class="chartBox">
+              <canvas id="chartBar"></canvas>
+           </div> 
 
-    <table>
-      <thead>
-        <tr class = "tr">
-          <th>data</th>
-          <th>typ tranzakcji</th>
-          <th>opis</th>
-          <th>kwota</th>
-          <th>saldo</th>
-        </tr>
-      </thead>
-      <tbody id="tbody"></tbody>
-    </table>
+           <div class="chartBox chartBox--dought">
+        <canvas id="chartDought"></canvas>
+      </div> 
+</div>
+</div>
+    </section>
+  
+    
+<!-- <div class="wrapper">
+  <div class="containter">
+    <div class="containerInside">
+ <div class="div1"></div>
+    <div class="div2"></div>
 
-    <div class="chartDoughtContainer">
-      <canvas id="chartDought"></canvas>
     </div>
+   
+  </div>
 
-    <div class="chartBarContainer">
-      <canvas id="chartBar"></canvas>
-    </div>
+</div> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+
+    <section>
+      <div class="wrapper wrapper--sectionTable">
+        <table class="table">
+          <thead>
+            <tr class="table__theadRow">
+              <th class="table__th table__desktopPrint">Data</th>
+              <th class="table__th">Typ </th>
+              <th class="table__th">Opis</th>
+              <th class="table__th">Kwota</th>
+              <th class="table__th table__desktopPrint">Saldo</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="./transactions.js"></script>
   </body>
 </html>

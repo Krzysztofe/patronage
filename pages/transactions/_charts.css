@@ -1,0 +1,50 @@
+.wrapper--sectionCharts{
+    /* height: 35vh; */
+    }
+    
+    .sectionCharts__container{
+     width: 100%;
+     height: 35vh;  
+     overflow-y:auto
+    
+    }
+    
+    .sectionCharts__slider{
+    width: 200%;
+    height: 100%;
+    display: flex;
+    background-color: var(--color-white);
+    }
+    
+    
+    .chartBox{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    } 
+    
+    
+    #chartBar, #chartDought{
+       margin: 0 auto;
+    }
+    
+    #chartBar{
+        width: 90%;
+    }
+    
+    @media(min-width: 769px){
+    
+        .sectionCharts__slider{
+            width: 100%;
+        }
+    
+        #chartBar, #chartDought{
+        
+               margin: 0 auto;
+            }
+    
+    
+        }
+    
+    

@@ -2,14 +2,14 @@ import { API_URL} from '../../data/URL.js';
 import { sendHTTPRequest } from '../../utils/sentHTTPRequest.js';
 
 export const printDataInChartBar = () => {
-  const chartBarContainer = document.querySelector('.chartBarContainer');
+//   const chartBarContainer = document.querySelector('.chartBarContainer');
   const message = document.createElement('div');
   message.innerText = 'loading';
-  chartBarContainer.append(message);
+//   chartBarContainer.append(message);
 
   sendHTTPRequest( API_URL)
     .then(data => {
-      message.remove();
+    //   message.remove();
       
       const dates = data.transactions
         .map(transaction => {
@@ -33,8 +33,19 @@ export const printDataInChartBar = () => {
 
 
 
+const body = document.querySelector('body')
+
 const chartPrint = (x_Param, y_Param) => {
   let chart = document.getElementById('chartBar').getContext('2d');
+
+  Chart.defaults.font.size = 5
+  
+  if (window.outerWidth > 425){
+      Chart.defaults.font.size = 10
+  }
+  if (window.outerWidth > 768){
+    Chart.defaults.font.size = 15
+}
 
   let balancesChart = new Chart(chart, {
     type: 'bar',
@@ -50,6 +61,8 @@ const chartPrint = (x_Param, y_Param) => {
     },
     options: {
       // tooltips: { mode: 'index' },
+      responsive: true,
+    //   mantainAspectRAtio: false,
       scales: {
         y: {
           // beginAtZero: true,
@@ -67,7 +80,8 @@ const chartPrint = (x_Param, y_Param) => {
             callback: label => `${label} PLN`,
           },
         },
-      },
+      },  
+
     },
   });
 };

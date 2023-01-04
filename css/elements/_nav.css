@@ -64,4 +64,5 @@
   height: var(--font-size-primary);
   font-weight: var(--font-weight-bold);
   color: var(--color-white);
+  letter-spacing: 0.2rem;
 }
