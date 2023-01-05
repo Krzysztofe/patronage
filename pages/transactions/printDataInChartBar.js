@@ -1,5 +1,7 @@
 import { API_URL} from '../../data/URL.js';
 import { sendHTTPRequest } from '../../utils/sentHTTPRequest.js';
+import { language } from '../../data/languagesData.js';
+import {ENG} from '../../data/variables.js'
 
 export const printDataInChartBar = () => {
 //   const chartBarContainer = document.querySelector('.chartBarContainer');
@@ -36,7 +38,7 @@ export const printDataInChartBar = () => {
 const body = document.querySelector('body')
 
 const chartPrint = (x_Param, y_Param) => {
-  let chart = document.getElementById('chartBar').getContext('2d');
+  const chart = document.getElementById('chartBar').getContext('2d');
 
   Chart.defaults.font.size = 5
   
@@ -47,13 +49,13 @@ const chartPrint = (x_Param, y_Param) => {
     Chart.defaults.font.size = 15
 }
 
-  let balancesChart = new Chart(chart, {
+  const balancesChart = new Chart(chart, {
     type: 'bar',
     data: {
       labels: x_Param,
       datasets: [
         {
-          label: 'Saldo',
+          label: ENG ? language.eng.pageTransactions.chartBar.balance : 'Saldo',
           data: y_Param,
           backgroundColor: barBackgroundColor(),
         },

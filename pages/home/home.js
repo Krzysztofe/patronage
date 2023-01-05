@@ -30,7 +30,6 @@ localStorage.getItem('userName') && nav.prepend(btnTransactions);
 localStorage.getItem('userName') && nav.prepend(btnLogout);
 
 btnRegisterLink?.addEventListener('click', () => {
-  
   !localStorage.getItem('userName') &&
     (window.location.href = './pages/register/register.html');
 });

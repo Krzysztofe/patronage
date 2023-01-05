@@ -46,7 +46,6 @@
 }
 
 .h2 {
-  color: var(--color-primary);
   text-align: center;
 }
 
@@ -67,13 +66,12 @@
 
 .inputLabel {
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
 }
 
 .input {
   padding: 0.3rem;
   border: none;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-black);
   outline: none;
 }
 
@@ -87,9 +85,9 @@
   margin-left: auto;
   padding: 0.5em 1em;
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  background-color: var(--color-white);
 }
 
 .btn__submit:hover {
-  outline: 1px solid var(--color-primary);
+  outline: 1px solid var(--color-black);
 }

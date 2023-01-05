@@ -42,6 +42,25 @@ export const language = {
 
       btnRegister: "Register",
     },
+    pageTransactions: {
+     table:{
+      btnLogout: "Logout",
+tableHead: ["Data", "Type", "Description", "Amount", "Balance"],
+transactionTypes: {
+  1: "Income - other",
+2: "Expense - shoping",
+3 : "Income - wage",
+4 : "Expense - other"
+}, },
+chartBar:{
+  balance: "Balance"
+},
+chartDought: {
+  transactionTypes: ["Income - other", "Expense - shoping", "Income - wage","Expense - other"]
+}
+
+
+    },
   },
 
   pl: {

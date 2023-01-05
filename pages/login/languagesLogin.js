@@ -1,4 +1,6 @@
 import { language } from "../../data/languagesData.js";
+import {PL, ENG} from '../../data/variables.js'
+import {reloadLanguage} from '../../utils/reloadLanguage.js'
 
 const btnENG = document.querySelector("[href='#eng']");
 const btnRegisterLink = document.getElementById('btnRegisterLink')
@@ -11,29 +13,24 @@ const password = document.getElementById('password')
 const btnLogin = document.getElementById('btnLogin')
 const dataReload = document.querySelectorAll('[data-reload]');
 
+const languageReference = language.eng.pageLogin
 
-if (window.location.hash) {
-  if (window.location.hash === '#eng') {
+  if (ENG) {
     btnENG.classList.add("nav__btnLanguage--active");
-    btnRegisterLink.textContent = language.eng.pageLogin.registerLink;
+    btnRegisterLink.textContent = languageReference.registerLink;
     btnRegisterLink.href = "../register/register.html#eng"
-      h2.textContent = language.eng.pageLogin.h2;
-      userNameLabel.textContent = language.eng.pageLogin.userName;
-      userName.placeholder = language.eng.pageLogin.userNamePlaceholder;
-      passwordLabel.textContent = language.eng.pageLogin.password;
-      password.placeholder = language.eng.pageLogin.passwordPlaceholder
-      btnLogin.textContent = language.eng.pageLogin.btnLogin
-
+      h2.textContent = languageReference.h2;
+      userNameLabel.textContent = languageReference.userName;
+      userName.placeholder = languageReference.userNamePlaceholder;
+      passwordLabel.textContent = languageReference.password;
+      password.placeholder = languageReference.passwordPlaceholder
+      btnLogin.textContent = languageReference.btnLogin
   }
-}
 
-if (window.location.hash === "#pl" || window.location.hash === ''){
+
+if (PL || window.location.hash === ''){
   btnPL.classList.add("nav__btnLanguage--active");
   }
 
-dataReload.forEach(i => {
-  i.addEventListener('click', () => {
-    window.location.href = i.getAttribute('href');
-    window.location.reload();
-  });
-});
+  reloadLanguage(dataReload)
+

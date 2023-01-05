@@ -1,16 +1,19 @@
 import { API_URL } from '../../data/URL.js';
 import { sendHTTPRequest } from '../../utils/sentHTTPRequest.js';
+import { ENG} from "../../data/variables.js"
+import { language } from "../../data/languagesData.js"
 
 export const printDataInDought = () => {
 
-  const chartDoughtContainer = document.querySelector('.chartDoughtContainer');
-//   const message = document.createElement('div');
-//   message.innerText = 'loading';
-//   chartDoughtContainer.append(message);
+  const chartBox = document.querySelector('.chartBox--dought');
+  const message = document.createElement('div');
+  message.innerText = 'loading';
+  chartBox.prepend(message);
+
 
   sendHTTPRequest(API_URL)
     .then(data => {
-    //   message.remove();
+      message.remove();
       const transactions = data.transactions;
       const transacationTypes = data.transacationTypes;
       const typesList = transactions.map(i => {
@@ -40,24 +43,24 @@ export const printDataInDought = () => {
       return chartPrint(transactionsNames, transactionsRepeatitions);
     })
     .catch(err => {
-      message.innerHTML = `<p>${err} ${err.data?.message}</p>`;
-      chartDoughtContainer.append(message);
+      const messagePrint = err.data ? err.data?.message : err
+      message.innerHTML = `<p>${messagePrint}</p>`;
+      chartBox.prepend(message);
     });
 };
 
 const chartPrint = (x_Param, y_Param) => {
-  let chart = document.getElementById('chartDought').getContext('2d');
+  const chart = document.getElementById('chartDought').getContext('2d');
 
-  let transactionsRepetitionChart = new Chart(chart, {
+  const transactionsRepetitionChart = new Chart(chart, {
     type: 'doughnut',
     data: {
-      labels: x_Param,
-      datasets: [{ label: 'Saldo', data: y_Param }],
-    },
-    options: { 
-        // tooltips: { mode: 'index' }
-        responsive: true,
-        mantainAspectRAtio: false,
+      labels: ENG ? language.eng.pageTransactions.chartDought.transactionTypes: x_Param ,
+      datasets: [
+        { label: 'Saldo',
+        data: y_Param 
+        }
+      ],
     },
   });
 };

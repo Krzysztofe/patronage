@@ -1,7 +1,4 @@
-.wrapper--sectionCharts{
-    /* height: 35vh; */
-    }
-    
+   
     .sectionCharts__container{
      width: 100%;
      height: 35vh;  
@@ -38,11 +35,6 @@
         .sectionCharts__slider{
             width: 100%;
         }
-    
-        #chartBar, #chartDought{
-        
-               margin: 0 auto;
-            }
     
     
         }

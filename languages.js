@@ -1,4 +1,6 @@
 import { language } from "./data/languagesData.js";
+import {PL, ENG} from "./data/variables.js";
+import {reloadLanguage} from "./utils/reloadLanguage.js";
 
 const btnENG = document.querySelector("[href='#eng']");
 const btnPL = document.querySelector("[href='#pl']");
@@ -9,29 +11,36 @@ const btnLogout = document.getElementById("btnLogout");
 const h1 = document.querySelector(".main__h1");
 const dataReloadElements = document.querySelectorAll("[data-reload]");
 
-if (window.location.hash) {
-  if (window.location.hash === "#eng") {
-    btnENG.classList.add("nav__btnLanguage--active");
-    btnRegisterLink &&
-      ((btnRegisterLink.textContent = language.eng.pageHome.registerLink),
-      (btnRegisterLink.href = "../pages/register/register.html#eng"));
-    btnLoginLink &&
-      ((btnLoginLink.textContent = language.eng.pageHome.loginLink),
-      (btnLoginLink.href = "../pages/login/login.html#eng "));
-    btnTransactions &&
-      (btnTransactions.textContent = language.eng.pageHome.transactions);
-    btnLogout && (btnLogout.textContent = language.eng.pageHome.btnLogout);
-    h1.textContent = language.eng.pageHome.h1;
-  }
-}
+const languageReference = language.eng.pageHome
 
-if (window.location.hash === "#pl" || window.location.hash === "") {
+
+  if (ENG) {
+    btnENG.classList.add("nav__btnLanguage--active");
+   
+    btnRegisterLink &&
+      ((btnRegisterLink.textContent = languageReference.registerLink),
+      (btnRegisterLink.href = "../pages/register/register.html#eng"));
+    
+      btnLoginLink &&
+      ((btnLoginLink.textContent = languageReference.loginLink),
+      (btnLoginLink.href = "../pages/login/login.html#eng "));
+    
+      btnTransactions &&
+      ((btnTransactions.textContent = languageReference.transactions),
+        (btnTransactions.href = "../pages/transactions/transactions.html#eng")
+        );
+      
+      btnLogout && (btnLogout.textContent = languageReference.btnLogout);
+   
+    h1.textContent = languageReference.h1;
+  }
+
+
+
+if (PL || window.location.hash === "") {
   btnPL.classList.add("nav__btnLanguage--active");
 }
 
-dataReloadElements.forEach(element => {
-  element.addEventListener("click", () => {
-    window.location.href = element.getAttribute("href");
-    window.location.reload();
-  });
-});
+reloadLanguage(dataReloadElements)
+
+
