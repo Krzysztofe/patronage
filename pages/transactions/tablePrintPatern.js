@@ -2,7 +2,7 @@ import { language } from "../../data/languagesData.js";
 import {ENG, PL} from "../../data/variables.js"
 
 
-export const typesInTable = (typeInNumber, typeInString) => {
+const typesInTable = (typeInNumber, typeInString) => {
 
   const transactionTypesENG = language.eng.pageTransactions.table.transactionTypes
 
@@ -23,7 +23,7 @@ if(ENG){
   }
 };
 
-if(PL){
+if(PL || location.hash === ""){
    switch (typeInNumber.type) {
       case 1:
         return typeInString[1];
@@ -58,3 +58,28 @@ if(PL){
         break;
     }
   };
+
+
+
+export const tablePrintPatern = (transaction, transacationTypes) =>{
+
+return `<tr class = "tbody__row">
+         <td class = "cell__desktopPrint">${transaction.date}</td>
+         <td> ${iconInTable(transaction)}</td>
+         
+         <td class =  "cell__description"> ${transaction.description} <br/>  
+          
+         <p class = "cell__type">${typesInTable(transaction, transacationTypes)}<p>
+         <p class = "td__print">
+         <span>Data </span>${transaction.date} <br/>
+         <span>Saldo</span> ${transaction.balance} PLN
+         </p>
+         
+         </td>
+          
+         <td>${transaction.amount} <small>PLN</small></td>
+         <td class = "cell__desktopPrint">${transaction.balance} <small>PLN</small></td>
+         
+        </tr>`
+
+} 

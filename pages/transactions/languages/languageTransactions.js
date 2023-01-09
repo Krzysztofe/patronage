@@ -1,6 +1,6 @@
-import {PL, ENG} from "../../data/variables.js"
-import { language } from "../../data/languagesData.js";
-import{reloadLanguage} from "../../utils/reloadLanguage.js"
+import {PL, ENG} from "../../../data/variables.js"
+import { language } from "../../../data/languagesData.js";
+import{reloadLanguage} from "../../../utils/reloadLanguage.js"
 
 const btnENG = document.querySelector("[href='#eng']");
 const btnPL = document.querySelector("[href='#pl']");

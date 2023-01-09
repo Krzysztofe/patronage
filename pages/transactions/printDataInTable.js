@@ -1,6 +1,9 @@
 import { API_URL } from "../../data/URL.js";
 import { sendHTTPRequest } from "../../utils/sentHTTPRequest.js";
-import { typesInTable, iconInTable } from "./typesInTable.js";
+import {tablePatern} from "./tablePatern.js"
+import {filterTable} from "./filterTable.js"
+
+
 
 export const printDataInTable = () => {
   document.querySelector("tbody").innerHTML = "<p>loading</p>";
@@ -8,40 +11,100 @@ export const printDataInTable = () => {
   sendHTTPRequest(API_URL)
     .then(data =>  {
       const transactions = data.transactions;
-const transacationTypes =  data.transacationTypes
-console.log(data)
-      let tablePatern = "";
-     
+      const transacationTypes =  data.transacationTypes
+      
+      let patern = "";     
       transactions.forEach(transaction => {
-    
-        tablePatern += 
-        `<tr class = "table__tbodyRow" >
-         <td class = "table__td table__desktopPrint">${transaction.date}</td>
-         <td class = "table__td">${iconInTable(transaction)}</td>
-         <td class = "table__td">${transaction.description} <br/> 
-         <small>${typesInTable(transaction, transacationTypes)}<small></td>
-          <td class = "table__td">${transaction.amount}</td>
-         <td class = "table__td table__desktopPrint">${transaction.balance}</td>
-      
-      
-         </tr >
-       <tr class = table__rowPrint> 
-       <td class = "table__td"><span>Data</span>${transaction.date}</td>
-       <td class = "table__td"><span>Saldo</span>${transaction.balance}</td>
-       
-       </tr>`
-       ;
+        patern += tablePatern(transaction, transacationTypes)
       });
 
-      document.getElementById("tbody").innerHTML = tablePatern;
+      document.getElementById("tbody").innerHTML = patern;
+      
+   
+      
+      const inputDescription = document.getElementById("input__description")
+      const cellDescription =  document.querySelectorAll('.cell__description')
 
-const rows = document.querySelectorAll(".table__tbodyRow")
-const row = document.querySelector(".table__tbodyRow").lastElementChild
-const tableCells = document.querySelectorAll('.table__desktopPrint ')
+      const inputType = document.getElementById("input__type")
+      const cellType= document.querySelectorAll(".cell__type")
 
-rows.forEach(row => row.addEventListener("click", () => {
- row.lastElementChild.classList.toggle("table__clickPrint")
+      inputDescription.addEventListener("keyup", () => {filterTable(rows, inputDescription, cellDescription)})
+       inputType.addEventListener("keyup", () => {filterTable(rows, inputType, cellType)})
+ 
+       const rows = document.querySelectorAll(".tbody__row")
+      const tdPrints = document.querySelectorAll(".td__print")
+    
+    rows.forEach((row, idx) => row.addEventListener("click", () => {
+  row.classList.toggle("tbody__row--clickPrint")
+  tdPrints[idx].classList.toggle("td__print--onClick")
+
 }))
+
+
+// function yo () {
+//   row.classList.toggle("tr__clickPrint")
+  
+//   tdAddPrint.forEach(td => td.classList.toggle("yy"))
+//   console.log("pierwszy", tdAddPrint[idx].classList)
+//   tdAddPrint[idx].classList.toggle("td__clickPrint")
+//   tdAddPrint[idx].classList.remove("yy")
+// console.log("drugi", tdAddPrint[idx].classList)
+  
+  // if (tdAddPrint.forEach(td => td.classList === "td__addPrint yy"
+  
+  // )
+  //  ){
+  //   tdAddPrint.removeEventListener("click", yo)
+  // }
+
+
+
+
+//   document.addEventListener('touchstart', function (e) {
+//     closePopupOnClick(e, popup);
+//     document.removeEventListener('touchstart', arguments.callee);
+// }, true);
+
+
+// if (row.className === "tbody__row tr__clickPrint"){
+//   row.removeEventListener('click', ()=>{
+//       row.classList.toggle("tr__clickPrint")
+//   tdAddPrint[idx].classList.toggle("td__clickPrint")
+//   });
+  // tdAddPrint[idx].innerHTML ="<p>pppppppppp</p>"
+// }
+// }
+// if (row.className === "tbody__row tr__clickPrint"){
+
+// }
+
+// )
+
+
+
+// if (tdAddPrint.forEach(td => td.classList === "td__addPrint yy")){
+//   rows.forEach(row => 
+//     row.removeEventListener("click", function() { yo(row, idx)})
+//     )
+//   }
+
+// const unregisteredEmail =
+// !usersData.some(user => user.email === passwordValue) &&
+// regularExpressionEmail.test(passwordValue);
+
+// const condition = tdAddPrint.forEach(td => td.some(td => td.classList === "td__addPrint yy" )   )
+
+
+//   rows.forEach(row => 
+//    condition &&
+//     row.removeEventListener("click", function() { yo(row, idx)})
+//     )
+
+
+
+
+
+
 
 
     })
@@ -51,5 +114,3 @@ rows.forEach(row => row.addEventListener("click", () => {
     });
 };
     
-
-

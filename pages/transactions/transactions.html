@@ -25,6 +25,8 @@
           </a>
         </div>
 
+
+
         <div class="nav__loginPrint">
           <script>
             const printText =
@@ -61,25 +63,43 @@
 
     <section>
       <div class="wrapper wrapper--sectionTable">
-        <table class="table">
+        <div class="section__inputsContainer">
+
+          <div class="input__Containter">
+          <label for="input__description"> Wyszukaj opis </label>
+          <input type = "text" id = "input__description" placeholder = "Wpisz dane">
+        </div>
+
+        <div class="input__Containter">
+          <label for="input__type"> Wyszukaj typ </label>
+          <input type = "text" id = "input__type"  placeholder = "Wpisz dane">
+        </div>
+        </div>
+  
+
+
+        <table>
           <thead>
-            <tr class="table__theadRow">
-              <th class="table__th table__desktopPrint">Data</th>
-              <th class="table__th">Typ </th>
-              <th class="table__th">Opis</th>
-              <th class="table__th">Kwota</th>
-              <th class="table__th table__desktopPrint">Saldo</th>
+            <tr>
+              <th class="cell__desktopPrint">Data</th>
+              <th>Typ </th>
+              <th>Opis</th>
+              <th>Kwota</th>
+              <th class="cell__desktopPrint">Saldo</th>
             </tr>
           </thead>
+
           <tbody id="tbody"></tbody>
+           
         </table>
+
       </div>
     </section>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="./transactions.js"></script>
-    <script type = "module" src = "./languageTransactions.js"></script>
-    <script type = "module" src = "./languagesTransactionsTable.js"></script>
+    <script type = "module" src = "./languages/languagesTransactionsTable.js"></script>
+    <script type = "module" src = "./languages/languageTransactions.js"></script>
 
   </body>
 </html>

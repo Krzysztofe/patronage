@@ -1,72 +1,138 @@
+
 .wrapper--sectionTable{
-
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-.table{
-    margin: var(--space-primary) auto;
+
+.section__inputsContainer{
+    margin-right: auto;
+    font-size: clamp(1rem, 1vw, 1.5rem);
+  color: var(--color-white);
+}
+
+
+input{
+    font-size: clamp(1rem, 1vw, 1.5rem);
+padding: 0.2rem;
+border: none;
+margin-left: 1rem
+}
+
+
+table{
     border-collapse: collapse;
-background-color: var(--color-white);
+    background-color: var(--color-white);
+text-align: center;
+width: 100%;
 }
 
-thead{
-
- 
+thead tr{
+    background-color: gray;
+    padding: 0.5rem 0;
 }
 
-
-.table__theadRow{
-
-    text-align: left;
-    font-weight: var(--font-weight-bold);
-
-}
-.table__th{
-
+tbody{
+height: 35vh; 
+overflow-x:auto;
+display: block
 }
 
-.table__tbodyRow{
-border-bottom: 1px solid var(--color-black);
-
+tbody::-webkit-scrollbar {
+    display: none;
 }
 
-.displayAllRow{
-    color: red
+tr{
+    display: flex;
+    flex-wrap: wrap;
 }
 
-
-
-.table__tbodyRow:nth-of-type(even) {
-    background-color: bisque;
+th, td {
+    width: 15%;
+    flex-grow: 1;
 }
 
-
-
-.table__td, .table__th{
-    padding: 0.2rem 0.5rem;
-    width: fit-content;
+th:nth-child(1), td:nth-child(1){
+width: 20%;
 }
 
-small{
+th:nth-child(2), td:nth-child(2){
+    width: 5%;
+    }
+
+
+    th:nth-child(3), td:nth-child(3){
+        width: 35%;
+        }
+
+
+
+.tbody__row {
+    cursor: pointer;
+     border-bottom: 1px solid black;
+}
+
+.tbody__row:hover {
+    background-color: gray;
+}
+
+td p {
     font-size: 1rem;
     font-weight: var(--font-weight-bold);
 }
 
- .table__desktopPrint{
-    display: none;
+td p span{
+    font-weight: 400;
 }
-  
-.table__clickPrint{
-  
+
+.td__print{
+display: none;
+}
+
+.td__print--onClick{
     display: block;
-   width: 40px;
 }
 
 
+
+.tbody__row--clickPrint{
+    background-color: gray;
+}
+
+ .cell__desktopPrint{
+    display: none;
+
+}
+  
+
+
+@media (min-width: 580px){
+    .section__inputsContainer{
+        display: flex;
+    }
+    .input__Containter + .input__Containter{
+margin-left: 2rem;
+    }
+    
+}
 
 @media (min-width: 769px){
-    .table__desktopPrint{
+    .cell__desktopPrint{
         display: block;
     }   
+    .tbody__row{
+        cursor:auto
+    }
+    .tbody__row:hover {
+        background-color: var(--color-white);
+    }
 
+    .tr__clickPrint{
+        background-color: var(--color-white)
+    }
+    .td__print--onClick{
+        display: none;
+    }
 
 }

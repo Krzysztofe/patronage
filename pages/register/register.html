@@ -35,7 +35,7 @@
           <form class="form" action="#">
             <h2 class="h2" id="h2">Rejestracja</h2>
             <div class="inputContainer">
-              <label class="inputLabel" id="userNameLabel">
+              <label for ="userName" class="inputLabel" id="userNameLabel">
                 Nazwa użytkowanika
               </label>
               <input
@@ -43,35 +43,36 @@
                 class="input"
                 autofocus
                 id="userName"
-                placeholder="Nazwa"
+                placeholder="Podaj nazwę użytkowanika"
               />
               <div class="error errorUserName"></div>
             </div>
             <div class="inputContainer">
-              <label class="inputLabel" id="passwordLabel">Hasło</label>
+              <label for ="password" class="inputLabel" id="passwordLabel">Hasło</label>
               <input
                 type="password"
                 class="input"
                 id="password"
-                placeholder="Hasło"
+                placeholder="Podaj hasło"
               />
               <div class="error errorPassword"></div>
             </div>
 
             <div class="inputContainer">
-              <label class="inputLabel" id="emailLabel">Email</label>
-              <input type="text" class="input" id="email" placeholder="Email" />
+              <label for = "email"
+              class="inputLabel" id="emailLabel">Email</label>
+              <input type="text" class="input" id="email" placeholder="Podaj email" />
               <div class="error errorEmail"></div>
             </div>
             <div class="inputContainer">
-              <label class="inputLabel" id="emailRepeatLabel">
+              <label for = "emailRepeat" class="inputLabel" id="emailRepeatLabel">
                 Potwierdź email
               </label>
               <input
                 type="email"
                 class="input"
                 id="emailRepeat"
-                placeholder="Email"
+                placeholder="Potwierdź email"
               />
               <div class="error errorEmailRepeat"></div>
             </div>

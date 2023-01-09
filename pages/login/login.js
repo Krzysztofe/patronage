@@ -1,4 +1,5 @@
 import { validationLogin } from "./validationLogin.js";
+import {ENG} from "../../data/variables.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   localStorage.getItem("userName") &&
@@ -21,7 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       const logedUser = usersData.filter(i => i.userName === userNameValue)[0];
       localStorage.setItem("userName", logedUser.userName);
-      location.href = "../transactions/transactions.html";
+    
     }
+    
+      if (ENG) {location.href = "../transactions/transactions.html#eng"} else{
+            location.href = "../transactions/transactions.html" 
+      }
+  
+   
   };
 });
