@@ -43,23 +43,29 @@ export const language = {
       btnRegister: "Register",
     },
     pageTransactions: {
-     table:{
-      btnLogout: "Logout",
-tableHead: ["Data", "Type", "Description", "Amount", "Balance"],
-transactionTypes: {
-  1: "Income - other",
-2: "Expense - shoping",
-3 : "Income - wage",
-4 : "Expense - other"
-}, },
-chartBar:{
-  balance: "Balance"
-},
-chartDought: {
-  transactionTypes: ["Income - other", "Expense - shoping", "Income - wage","Expense - other"]
-}
-
-
+      table: {
+        btnLogout: "Logout",
+        inputsLabels: ["Find transaction description", "Find transaction type"],
+        placeholders: ["Enter data", "Enter data"],
+        tableHead: ["Data", "Type", "Description", "Amount", "Balance"],
+        transactionTypes: {
+          1: "Income - other",
+          2: "Expense - shoping",
+          3: "Income - wage",
+          4: "Expense - other",
+        },
+      },
+      chartBar: {
+        balance: "Balance",
+      },
+      chartDought: {
+        transactionTypes: [
+          "Income - other",
+          "Expense - shoping",
+          "Income - wage",
+          "Expense - other",
+        ],
+      },
     },
   },
 

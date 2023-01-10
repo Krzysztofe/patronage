@@ -8,8 +8,7 @@
   </head>
 
   <body>
-
-<!-- <a href = "/" onclick="route()" >home</a>
+    <!-- <a href = "/" onclick="route()" >home</a>
 <a href = "/login" onclick="route()">login</a>
 <a href = "/register" onclick="route()">register</a>
 
@@ -20,26 +19,26 @@
     </div>
 </div> -->
 
-  
-
     <nav class="nav">
       <div class="wrapper wrapper--nav">
-        <div class="nav__languages">
-          <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
-          <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+        <div class="nav__topContainer">
+          <div class="nav__loginPrint">
+            <script>
+              const printText =
+                window.location.hash === '#eng'
+                  ? `Loged: ${localStorage.getItem('userName')}`
+                  : `Zalogowano: ${localStorage.getItem('userName')}`
+              localStorage.getItem('userName') && document.write(printText)
+            </script>
+          </div>
+
+          <div class="nav__languages">
+            <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
+            <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+          </div>
         </div>
 
-        <div class="nav__main"></div>
-
-        <div class="nav__loginPrint">
-          <script>
-            const printText =
-              window.location.hash === '#eng'
-                ? `Loged: ${localStorage.getItem('userName')}`
-                : `Zalogowano: ${localStorage.getItem('userName')}`
-            localStorage.getItem('userName') && document.write(printText)
-          </script>
-        </div>
+        <div class="nav__bottomContainer"></div>
       </div>
     </nav>
 
@@ -53,6 +52,5 @@
 
     <script type="module" src="./pages/home/home.js"></script>
     <script type="module" src="/languages.js"></script>
-  
   </body>
 </html>

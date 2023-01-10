@@ -35,7 +35,7 @@ export const printDataInTable = () => {
       const tdPrints = document.querySelectorAll(".td__print")
     
     rows.forEach((row, idx) => row.addEventListener("click", () => {
-  row.classList.toggle("tbody__row--clickPrint")
+  row.classList.toggle("tbody__row--onClick")
   tdPrints[idx].classList.toggle("td__print--onClick")
 
 }))

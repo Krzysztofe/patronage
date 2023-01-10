@@ -1,3 +1,7 @@
+:focus-visible {
+  outline: 1px solid var(--color-black);
+}
+
 .main {
   margin-top: clamp(2vh, 20%, 10vh);
 }
@@ -72,13 +76,12 @@
   padding: 0.3rem;
   border: none;
   border-bottom: 1px solid var(--color-black);
-  outline: none;
 }
 
 .error {
   font-size: 1rem;
   height: 1rem;
-  color: rgb(238, 28, 24);
+  color: rgb(221, 4, 0);
 }
 
 .btn__submit {

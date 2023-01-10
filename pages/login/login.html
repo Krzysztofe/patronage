@@ -12,29 +12,31 @@
   <body>
     <nav class="nav">
       <div class="wrapper wrapper--nav">
-        <div class="nav__languages">
-          <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
-          <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+        <div class="nav__topContainer">
+          <div class="nav__loginPrint">
+            <script>
+              const printText =
+                window.location.hash === '#eng'
+                  ? `Loged: ${localStorage.getItem('userName')}`
+                  : `Zalogowano: ${localStorage.getItem('userName')}`
+              localStorage.getItem('userName') && document.write(printText)
+            </script>
+          </div>
+
+          <div class="nav__languages">
+            <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
+            <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+          </div>
         </div>
 
-        <div class="nav__main">
+        <div class="nav__bottomContainer">
           <a
             href="../register/register.html"
             id="btnRegisterLink"
-            class="nav__btnMineLine"
+            class="nav__btnBottom"
           >
             Rejestracja
           </a>
-        </div>
-
-        <div class="nav__loginPrint">
-          <script>
-            const printText =
-              window.location.hash === '#eng'
-                ? `Loged: ${localStorage.getItem('userName')}`
-                : `Zalogowano: ${localStorage.getItem('userName')}`
-            localStorage.getItem('userName') && document.write(printText)
-          </script>
         </div>
       </div>
     </nav>
@@ -43,21 +45,38 @@
       <div class="wrapper wrapper-form">
         <div class="main__formOutline">
           <form class="form" action="#">
-            <h2 class = "h2" id="h2">Logowanie</h2>
+            <h2 class="h2" id="h2">Logowanie</h2>
 
             <div class="inputContainer">
-              <label for = "userName" class="inputLabel" id="userNameLabel">Nazwa użytkowanika</label>
-              <input   class="input" type="text" autofocus id="userName" placeholder="Poadj nazwę" />
+              <label for="userName" class="inputLabel" id="userNameLabel">
+                Nazwa użytkowanika
+              </label>
+              <input
+                class="input"
+                type="text"
+                autofocus
+                id="userName"
+                placeholder="Poadj nazwę"
+              />
               <div class="error errorUserName"></div>
             </div>
 
             <div class="inputContainer">
-              <label  for = "password" class="inputLabel" id="passwordLabel">Hasło / Email</label>
-              <input class="input" type="password" id="password" placeholder="Poadj hasło / email" />
+              <label for="password" class="inputLabel" id="passwordLabel">
+                Hasło / Email
+              </label>
+              <input
+                class="input"
+                type="password"
+                id="password"
+                placeholder="Poadj hasło / email"
+              />
               <div class="error errorPassword"></div>
             </div>
 
-            <button class="btn__submit" type="button" id="btnLogin">Zaloguj</button>
+            <button class="btn__submit" type="button" id="btnLogin">
+              Zaloguj
+            </button>
           </form>
         </div>
       </div>

@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;800&display=swap");
 
 :root {
-  --font-family-main: 'Open Sans', sans-serif;
+  --font-family-main: "Open Sans", sans-serif;
   --font-size-primary: 1.5rem;
   --font-weight-normal: 500;
   --font-weight-bold: 800;
   --space-primary: 2.5rem;
+  --space-small: 1.5rem;
 
-  --color-primary: rgba(28,90,88, 1);
+  --color-primary: rgba(28, 90, 88, 0.3);
   --color-white: rgba(255, 255, 255, 1);
   --color-black: rgba(0, 0, 0, 1);
 }

@@ -1,138 +1,175 @@
-
-.wrapper--sectionTable{
-display: flex;
-flex-direction: column;
-align-items: center;
+.sectionTable {
+  height: 50%;
 }
 
+.wrapper--table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 1rem;
+}
 
-.section__inputsContainer{
-    margin-right: auto;
-    font-size: clamp(1rem, 1vw, 1.5rem);
+/* INPUTS */
+.table__inputsContainer {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  color: var(--color-white);
+  background-color: rgba(73, 123, 121, 1);
+  width: 100%;
+  padding: 0.4rem;
+}
+
+.input__container {
+  display: flex;
+  align-items: center;
+}
+
+.input__container + .input__container {
+  margin-top: 0.2rem;
+}
+
+label {
+  display: block;
+  text-align: right;
+  width: 70%;
+  font-size: 0.9rem;
+}
+
+input {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  padding: 0.2rem;
+  border: none;
+  margin-left: 1rem;
+  width: 30%;
+}
+
+/* TABLE */
+
+table {
+  border-collapse: collapse;
+  background-color: var(--color-white);
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+
+thead tr {
+  background-color: rgba(73, 123, 121, 1);
+  padding: 0.5rem 0;
   color: var(--color-white);
 }
 
-
-input{
-    font-size: clamp(1rem, 1vw, 1.5rem);
-padding: 0.2rem;
-border: none;
-margin-left: 1rem
-}
-
-
-table{
-    border-collapse: collapse;
-    background-color: var(--color-white);
-text-align: center;
-width: 100%;
-}
-
-thead tr{
-    background-color: gray;
-    padding: 0.5rem 0;
-}
-
-tbody{
-height: 35vh; 
-overflow-x:auto;
-display: block
+tbody {
+  height: 100%;
+  overflow-x: auto;
+  display: block;
 }
 
 tbody::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
-tr{
-    display: flex;
-    flex-wrap: wrap;
+tr {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-th, td {
-    width: 15%;
-    flex-grow: 1;
+th,
+td {
+  width: 15%;
+  flex-grow: 1;
 }
 
-th:nth-child(1), td:nth-child(1){
-width: 20%;
+th:nth-child(1),
+td:nth-child(1) {
+  width: 20%;
 }
 
-th:nth-child(2), td:nth-child(2){
-    width: 5%;
-    }
+th:nth-child(2),
+td:nth-child(2) {
+  width: 5%;
+}
 
-
-    th:nth-child(3), td:nth-child(3){
-        width: 35%;
-        }
-
-
+th:nth-child(3),
+td:nth-child(3) {
+  width: 35%;
+}
 
 .tbody__row {
-    cursor: pointer;
-     border-bottom: 1px solid black;
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  /* background-color: var(--color-white); */
 }
 
 .tbody__row:hover {
-    background-color: gray;
+  background-color: var(--color-primary);
 }
 
 td p {
-    font-size: 1rem;
-    font-weight: var(--font-weight-bold);
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
 }
 
-td p span{
-    font-weight: 400;
+td p span {
+  font-weight: 400;
 }
 
-.td__print{
-display: none;
+.td__print {
+  display: none;
 }
 
-.td__print--onClick{
+.tbody__row--onClick {
+  background-color: var(--color-primary);
+}
+
+.td__print--onClick {
+  display: block;
+}
+
+.cell__desktopPrint {
+  display: none;
+}
+
+/* INPUTS */
+
+@media (min-width: 580px) {
+  .table__inputsContainer {
+    display: flex;
+  }
+
+  .input__container + .input__container {
+    margin-left: 2rem;
+  }
+
+  label,
+  input {
+    font-size: 1.4rem;
+  }
+
+  input {
+    padding-bottom: 0;
+  }
+}
+
+/* TABLE */
+
+@media (min-width: 769px) {
+  .cell__desktopPrint {
     display: block;
-}
+  }
+  .tbody__row {
+    cursor: auto;
+  }
+  .tbody__row--clickPrint {
+    background-color: var(--color-white);
+  }
 
+  .tbody__row:hover {
+    background-color: var(--color-white);
+  }
 
-
-.tbody__row--clickPrint{
-    background-color: gray;
-}
-
- .cell__desktopPrint{
+  .td__print--onClick {
     display: none;
-
-}
-  
-
-
-@media (min-width: 580px){
-    .section__inputsContainer{
-        display: flex;
-    }
-    .input__Containter + .input__Containter{
-margin-left: 2rem;
-    }
-    
-}
-
-@media (min-width: 769px){
-    .cell__desktopPrint{
-        display: block;
-    }   
-    .tbody__row{
-        cursor:auto
-    }
-    .tbody__row:hover {
-        background-color: var(--color-white);
-    }
-
-    .tr__clickPrint{
-        background-color: var(--color-white)
-    }
-    .td__print--onClick{
-        display: none;
-    }
-
+  }
 }

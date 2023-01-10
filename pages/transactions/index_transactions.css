@@ -6,3 +6,6 @@
 @import "./_charts.css";
 @import "./_table.css";
 
+main {
+  height: calc(100vh - 82px);
+}

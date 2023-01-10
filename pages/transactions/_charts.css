@@ -1,12 +1,23 @@
-   
-    .sectionCharts__container{
+.charts{
+height: 50%;
+}
+
+.wrapper--charts{
+    height: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+
+    .charts__container{
      width: 100%;
      height: 35vh;  
      overflow-y:auto
     
     }
     
-    .sectionCharts__slider{
+    .charts__slider{
     width: 200%;
     height: 100%;
     display: flex;

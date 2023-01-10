@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./_transactions.css" />
+    <link rel="stylesheet" href="./index_transactions.css" />
     <script
       src="https://kit.fontawesome.com/f3b0ddb395.js"
       crossorigin="anonymous"
@@ -14,36 +14,40 @@
   <body>
     <nav class="nav">
       <div class="wrapper wrapper--nav">
-        <div class="nav__languages">
-          <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
-          <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+        <div class="nav__topContainer">
+          <div class="nav__loginPrint">
+            <script>
+              const printText =
+                window.location.hash === '#eng'
+                  ? `Loged: ${localStorage.getItem('userName')}`
+                  : `Zalogowano: ${localStorage.getItem('userName')}`
+              localStorage.getItem('userName') && document.write(printText)
+            </script>
+          </div>
+
+          <div class="nav__languages">
+            <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
+            <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+          </div>
         </div>
 
-        <div class="nav__main">
-          <a id="btnLogout" class="nav__btnMineLine">
+        <div class="nav__bottomContainer">
+          <a id="btnLogout" class="nav__btnBottom">
             Wyloguj
           </a>
         </div>
 
-
-
-        <div class="nav__loginPrint">
-          <script>
-            const printText =
-              window.location.hash === '#eng'
-                ? `Loged: ${localStorage.getItem('userName')}`
-                : `Zalogowano: ${localStorage.getItem('userName')}`
-            localStorage.getItem('userName') && document.write(printText)
-          </script>
-        </div>
       </div>
     </nav>
 
-    <section>
-      <div class="wrapper">  
-<div class="sectionCharts__container">
 
-        <div class="sectionCharts__slider">
+<main>
+
+    <section class="charts">
+      <div class="wrapper wrapper--charts">  
+<div class="charts__container">
+
+        <div class="charts__slider">
             <div class="chartBox chartBox--bar ">
               <canvas id="chartBar"></canvas>
             </div> 
@@ -57,21 +61,17 @@
   
 
 
+    <section class="sectionTable">
+      <div class="wrapper wrapper--table">
+        <div class="table__inputsContainer">
 
-
-
-
-    <section>
-      <div class="wrapper wrapper--sectionTable">
-        <div class="section__inputsContainer">
-
-          <div class="input__Containter">
-          <label for="input__description"> Wyszukaj opis </label>
+          <div class="input__container">
+          <label for="input__description"> Wyszukaj opis transakcji </label>
           <input type = "text" id = "input__description" placeholder = "Wpisz dane">
         </div>
 
-        <div class="input__Containter">
-          <label for="input__type"> Wyszukaj typ </label>
+        <div class="input__container">
+          <label for="input__type"> Wyszukaj typ transakcji </label>
           <input type = "text" id = "input__type"  placeholder = "Wpisz dane">
         </div>
         </div>
@@ -95,7 +95,7 @@
 
       </div>
     </section>
-
+</main>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="./transactions.js"></script>
     <script type = "module" src = "./languages/languagesTransactionsTable.js"></script>
