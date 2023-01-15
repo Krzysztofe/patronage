@@ -20,25 +20,6 @@ export const validationLogin = () => {
     !usersData.some(user => user.email === passwordValue) &&
     regularExpressionEmail.test(passwordValue);
 
-  //   if (!registeredData) {
-  //     if (window.location.hash === "#eng") {
-  //       errorUserName.innerText = language.eng.pageLogin.userNameError;
-  //       errorPassword.innerText = language.eng.pageLogin.passwordError;
-  //       unregisteredEmail && alert(language.eng.pageLogin.alertUnregisteredEmail);
-  //       registeredEmail && alert(language.eng.pageLogin.alertRegisteredEmail);
-  //     } else {
-  //       errorUserName.innerText = "Podaj nazwę przypisaną do emaila";
-  //       errorPassword.innerText = "Podaj hasło lub email przypisane do nazwy";
-  //       unregisteredEmail &&
-  //         alert("Email niezarejsetrowany możliwy do zarejestrowania ");
-  //       registeredEmail && alert("Email zarejesrtowany");
-  //     }
-  //     errorsCounter.push(1);
-  //   } else {
-  //     errorUserName.innerText = "";
-  //     errorPassword.innerText = "";
-  //   }
-
   const languageKey = window.location.hash === "#eng" ? "eng" : "pl";
 
   if (!registeredData) {
@@ -52,25 +33,9 @@ export const validationLogin = () => {
   }
 
   if (unregisteredEmail) {
-    alert("email mozliwy do rejestracji");
+    alert("Email niezarejestrowany, możliwy do zarejestrowania");
   }
   return errorsCounter;
 };
 
-// if (!registeredData) {
-//     if (window.location.hash === "#eng") {
-//       errorUserName.innerText = language.eng.pageLogin.userNameError;
-//       errorPassword.innerText = language.eng.pageLogin.passwordError;
-//       unregisteredEmail && alert(language.eng.pageLogin.alert);
-//       registeredEmail && alert("ppp")
-//     } else {
-//       errorUserName.innerText = "Podaj nazwę przypisaną do emaila";
-//       errorPassword.innerText = "Podaj hasło lub email przypisane do nazwy";
-//       unregisteredEmail && alert("Email niezarejsetrowany możliwy do zarejestrowania ");
-//
-//       }
-//     errorsCounter.push(1);
-//   } else {
-//     errorUserName.innerText = "";
-//     errorPassword.innerText = "";
-//   }
+

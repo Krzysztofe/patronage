@@ -1,5 +1,11 @@
-:focus-visible {
+
+*:focus:not(:focus-visible){
+  outline: none;
+}
+
+*:focus-visible {
   outline: 1px solid var(--color-black);
+  outline-offset: 3px;
 }
 
 .main {

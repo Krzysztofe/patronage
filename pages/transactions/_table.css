@@ -14,7 +14,7 @@
 .table__inputsContainer {
   font-size: clamp(1rem, 1vw, 1.5rem);
   color: var(--color-white);
-  background-color: rgba(73, 123, 121, 1);
+  background-color: var(--color-primary);
   width: 100%;
   padding: 0.4rem;
 }
@@ -55,7 +55,7 @@ table {
 }
 
 thead tr {
-  background-color: rgba(73, 123, 121, 1);
+  background-color: var(--color-primary);
   padding: 0.5rem 0;
   color: var(--color-white);
 }
@@ -99,11 +99,10 @@ td:nth-child(3) {
 .tbody__row {
   cursor: pointer;
   border-bottom: 1px solid black;
-  /* background-color: var(--color-white); */
 }
 
 .tbody__row:hover {
-  background-color: var(--color-primary);
+  background-color: rgba(73, 123, 121, 0.2);
 }
 
 td p {
@@ -120,7 +119,7 @@ td p span {
 }
 
 .tbody__row--onClick {
-  background-color: var(--color-primary);
+  background-color: rgba(73, 123, 121, 0.2);
 }
 
 .td__print--onClick {
