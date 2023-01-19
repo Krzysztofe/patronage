@@ -3,28 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./register.css" />
+    <title>Transactions</title>
+    <link rel="stylesheet" href="./index_register.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="module" src="./register.js"></script>
   </head>
   <body>
     <nav class="nav">
       <div class="wrapper wrapper--nav">
         <div class="nav__topContainer">
+          <div class="nav__languages">
+            <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
+            <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+          </div>
           <div class="nav__loginPrint">
             <script>
               const printText =
-                window.location.hash === '#eng'
+                location.hash === '#eng'
                   ? `Loged: ${localStorage.getItem('userName')}`
                   : `Zalogowano: ${localStorage.getItem('userName')}`
               localStorage.getItem('userName') && document.write(printText)
             </script>
-          </div>
-
-          <div class="nav__languages">
-            <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
-            <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
           </div>
         </div>
 
@@ -43,7 +41,7 @@
     <main class="main">
       <div class="wrapper wrapper-form">
         <div class="main__formOutline">
-          <form class="form" action="#">
+          <form class="form">
             <h2 class="h2" id="h2">Rejestracja</h2>
             <div class="inputContainer">
               <label for="userName" class="inputLabel" id="userNameLabel">
@@ -51,6 +49,7 @@
               </label>
               <input
                 type="text"
+                name="userName"
                 class="input"
                 autofocus
                 id="userName"
@@ -64,6 +63,7 @@
               </label>
               <input
                 type="password"
+                name="password"
                 class="input"
                 id="password"
                 placeholder="Podaj hasło"
@@ -77,6 +77,7 @@
               </label>
               <input
                 type="text"
+                name="email"
                 class="input"
                 id="email"
                 placeholder="Podaj email"
@@ -89,20 +90,22 @@
               </label>
               <input
                 type="email"
+                name="emailRepeat"
                 class="input"
                 id="emailRepeat"
                 placeholder="Potwierdź email"
               />
               <div class="error errorEmailRepeat"></div>
             </div>
-            <button class="btn__submit" id="btnRegister">
+            <button type="submit" class="btn__submit" id="btnRegister">
               Zarejestruj
             </button>
           </form>
         </div>
       </div>
     </main>
-
-    <script type="module" src="languageRegister.js"></script>
+    <script type="module" src="../../utils/nav_btns_languages.js"></script>
+    <script type="module" src="./register_languages.js"></script>
+    <script type="module" src="./register_main.js"></script>
   </body>
 </html>

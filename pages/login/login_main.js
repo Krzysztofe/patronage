@@ -1,8 +1,8 @@
-import { validationLogin } from "./validationLogin.js";
-import { languageURLKey, languageURLKey } from "../../data/variables.js";
+import { validationLogin } from "./login_validation.js";
+import { languageURLKey } from "../../data/variables.js";
 
 localStorage.getItem("userName") &&
-  (location.href = "../transactions/transactions.html");
+  (location.href = `../transactions/transactions.html${languageURLKey}`);
 
 const btn = document.getElementById("btnLogin");
 

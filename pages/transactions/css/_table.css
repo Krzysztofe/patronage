@@ -36,7 +36,7 @@ label {
 }
 
 input {
-  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-size: 1rem;
   padding: 0.2rem;
   border: none;
   margin-left: 1rem;
@@ -107,26 +107,29 @@ td:nth-child(3) {
 
 td p {
   font-size: 1rem;
-  font-weight: var(--font-weight-bold);
 }
 
 td p span {
-  font-weight: 400;
-}
-
-.td__print {
-  display: none;
+  font-weight: var(--font-weight-bold);
 }
 
 .tbody__row--onClick {
   background-color: rgba(73, 123, 121, 0.2);
 }
-
+.td__print {
+  display: none;
+}
 .td__print--onClick {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
-.cell__desktopPrint {
+.td__print--onClick > p:first-child {
+  border-bottom: 1px solid var(--color-black);
+}
+
+.cell__desktopOnly {
   display: none;
 }
 
@@ -143,7 +146,7 @@ td p span {
 
   label,
   input {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   input {
@@ -154,13 +157,14 @@ td p span {
 /* TABLE */
 
 @media (min-width: 769px) {
-  .cell__desktopPrint {
+  .cell__desktopOnly {
     display: block;
   }
   .tbody__row {
     cursor: auto;
   }
-  .tbody__row--clickPrint {
+
+  .tbody__row--onClick {
     background-color: var(--color-white);
   }
 

@@ -12,7 +12,6 @@
 .nav__topContainer {
   display: flex;
   align-items: center;
-  justify-content: right;
 }
 
 .nav__loginPrint {
@@ -32,7 +31,7 @@
   text-decoration: none;
   color: var(--color-black);
   background-color: rgba(255, 255, 255, 0.4);
-  margin-left: var(--space-small);
+  margin-right: var(--space-small);
 }
 
 .nav__btnLanguage:hover,
@@ -49,7 +48,6 @@
 .nav__bottomContainer {
   margin-top: var(--space-small);
   display: flex;
-  justify-content: right;
 }
 
 .nav__btnBottom {
