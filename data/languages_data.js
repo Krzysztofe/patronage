@@ -89,7 +89,7 @@ export const language = {
     pageLogin: {
       registerLink: "Rejestracja",
       h2: "Logowanie",
-      userName: "Nazwa użytkowanika",
+      userName: "Nazwa użytkownika",
       userNamePlaceholder: "Poadj nazwę",
       userNameError: "Podaj nazwę przypisaną do emaila",
       password: "Hasło / Email",
@@ -101,8 +101,8 @@ export const language = {
     pageRegister: {
       loginLink: "Logowanie",
       h2: "Rejestracja",
-      userNameLabel: "Nazwa użytkowanika",
-      userNamePlaceholder: "Podaj nazwię żytkowanika",
+      userNameLabel: "Nazwa użytkownika",
+      userNamePlaceholder: "Podaj nazwię",
       userNameErrorMinCharacters: "Min. 6 znaków",
       userNameErrorMaxCharacters: "Max. 16 znaków",
       userNameErrorRegistered: "Nazwa użytkownika już zarejestrowana ",

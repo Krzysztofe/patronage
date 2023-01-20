@@ -1,11 +1,11 @@
-
-*:focus:not(:focus-visible){
-  outline: none;
-}
-
-*:focus-visible {
+:focus {
   outline: 1px solid var(--color-black);
   outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+  outline: 0;
+  outline-offset: 0;
 }
 
 .main {
@@ -80,8 +80,9 @@
 
 .input {
   padding: 0.3rem;
-  border: none;
+  border: 0;
   border-bottom: 1px solid var(--color-black);
+  outline: 0;
 }
 
 .error {
@@ -95,8 +96,10 @@
   padding: 0.5em 1em;
   font-weight: var(--font-weight-bold);
   background-color: var(--color-white);
+  outline: 1px solid var(--color-black);
 }
 
-.btn__submit:hover {
-  outline: 1px solid var(--color-black);
+.btn__submit:hover,
+.btn__submit:focus {
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
 }

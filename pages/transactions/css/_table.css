@@ -38,6 +38,7 @@ input {
   border: none;
   margin-left: 1rem;
   width: 4rem;
+  outline: 0;
 }
 
 /* TABLE */

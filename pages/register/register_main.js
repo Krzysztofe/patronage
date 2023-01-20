@@ -1,6 +1,8 @@
 import { validationRegister } from "./register_form_validation.js";
 import { languageURLKey } from "../../data/variables.js";
 
+// IF USER LOGED MOVE TO TRANSACTIONS
+
 localStorage.getItem("userName") &&
   (location.href = `../transactions/transactions.html${languageURLKey}`);
 
@@ -21,7 +23,7 @@ formElem.addEventListener("submit", e => {
 });
 
 // SET USER OBJECT IN ARRAY "users" IN LOCALSTORAGE,
-// SET LOGED USER NAME IN KEY "userName" IN  LOCALSTORAGE
+// SET LOGED USER NAME IN KEY "userName" IN LOCALSTORAGE
 
 const setData = () => {
   const usersData = JSON.parse(localStorage.getItem("users")) || [];

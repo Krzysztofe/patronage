@@ -27,11 +27,11 @@ sendHTTPRequest(API_URL)
     const rows = document.querySelectorAll(".tbody__row");
     const tdPrints = document.querySelectorAll(".td__print");
 
-    inputDescription.addEventListener("keyup", () => {
+    inputDescription.addEventListener("input", () => {
       filterTable(rows, inputDescription, cellsDescription);
     });
 
-    inputType.addEventListener("keyup", () => {
+    inputType.addEventListener("input", () => {
       filterTable(rows, inputType, cellsType);
     });
 

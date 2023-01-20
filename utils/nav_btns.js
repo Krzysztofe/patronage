@@ -24,13 +24,13 @@ btnLogout.className = "nav__btnBottom";
 
 const nav = document.querySelector(".nav__bottomContainer");
 
-// IF NOT LOGGED
+// IF NOT LOGGED PRINT REGISTER LOGIN
 
 !localStorage.getItem("userName") && nav.prepend(btnRegisterLink);
 
 !localStorage.getItem("userName") && nav.prepend(btnLoginLink);
 
-// IF LOGGED
+// IF LOGGED PRINT LOGOUT TRANSACTIONS
 
 localStorage.getItem("userName") && nav.prepend(btnTransactions);
 

@@ -1,5 +1,7 @@
 import { languageURLKey } from "../../data/variables.js";
 
+// IF UER NOT LOGET MOVE TO LOGIN
+
 !localStorage.getItem("userName") &&
   (location.href = `../login/login.html${languageURLKey}`);
 

@@ -12,53 +12,64 @@ export const validationRegister = () => {
 
   const formElem = document.querySelector("form");
   const formData = new FormData(formElem);
-  const userValues = Object.fromEntries(formData);
+  const user = Object.fromEntries(formData);
 
   let errors = false;
-
   const regExEmail =
     /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
 
-  if (userValues.userName.length < 6) {
-    errorUserName.innerText = languageRef.userNameErrorMinCharacters;
-    errors = true;
-  } else if (userValues.userName.length > 16) {
-    errorUserName.innerText = languageRef.userNameErrorMaxCharacters;
+  if (!userNameConditions()) {
+    errorUserName.textContent =
+      "6-16 znaków, min. 5 liter, min. 1 cyfra, możliwe - _ [ ]  /";
     errors = true;
   } else {
     errorUserName.innerText = "";
   }
 
-  if (userValues.password.length < 6) {
+  if (user.password.length < 6) {
     errorPassword.innerText = languageRef.passwordError;
     errors = true;
   } else {
     errorPassword.innerText = "";
   }
 
-  if (!regExEmail.test(userValues.email)) {
+  if (!regExEmail.test(user.email)) {
     errorEmail.innerText = languageRef.emailError;
     errors = true;
   } else {
     errorEmail.innerText = "";
   }
 
-  if (userValues.emailRepeat !== userValues.email) {
+  if (user.emailRepeat !== user.email) {
     errorEmailRepeat.innerText = languageRef.emailRepeatError;
     errors = true;
   } else {
     errorEmailRepeat.innerText = "";
   }
 
-  if (usersData.some(i => i.userName === userValues.userName)) {
+  if (usersData.some(i => i.userName === user.userName)) {
     errorUserName.innerText = languageRef.userNameErrorRegistered;
     errors = true;
   }
 
-  if (usersData.some(i => i.email === userValues.email)) {
+  if (usersData.some(i => i.email === user.email)) {
     errorEmail.innerText = languageRef.emailErrorRegistered;
     errors = true;
   }
-
+  userNameConditions();
   return errors;
+};
+
+const userNameConditions = () => {
+  const userNameValue = document.getElementById("userName").value.trim();
+  const regEx = /^[a-z0-9_\-\[\]\\/]{6,16}$/gi;
+  const basicConditions = regEx.test(userNameValue);
+  const dygits = userNameValue.match(/[0-9]/g) || [];
+  const charts = userNameValue.match(/[a-z]/gi) || [];
+
+  if (dygits.length > 0 && charts.length > 4 && basicConditions) {
+    return true;
+  } else {
+    return false;
+  }
 };
