@@ -15,8 +15,9 @@ export const validationRegister = () => {
   const user = Object.fromEntries(formData);
 
   let errors = false;
+
   const regExEmail =
-    /^[a-z\d]+[\w\d.-]*@( ?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
+    /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
 
   if (!userNameConditions()) {
     errorUserName.textContent = languageRef.userNameError;
@@ -55,12 +56,12 @@ export const validationRegister = () => {
     errorEmail.innerText = languageRef.emailErrorRegistered;
     errors = true;
   }
-  userNameConditions();
+
   return errors;
 };
 
 const userNameConditions = () => {
-  const userNameValue = document.getElementById("userName").value.trim();
+  const userNameValue = document.getElementById("userName").value;
   const regEx = /^[a-z0-9_\-\[\]\\/]{6,16}$/gi;
   const basicConditions = regEx.test(userNameValue);
   const dygits = userNameValue.match(/[0-9]/g) || [];
