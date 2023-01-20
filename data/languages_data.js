@@ -29,8 +29,8 @@ export const language = {
       h2: "Register",
       userNameLabel: "User name",
       userNamePlaceholder: "Enter name",
-      userNameErrorMinCharacters: "Min. 6 characters",
-      userNameErrorMaxCharacters: "Max. 16 characters",
+      userNameError:
+        "6-16 characters, min. 5 letters, min. 1 digit, possible - _ [ ]/",
       userNameErrorRegistered: "User name already registered",
 
       passwordLabel: "Password",
@@ -103,8 +103,8 @@ export const language = {
       h2: "Rejestracja",
       userNameLabel: "Nazwa użytkownika",
       userNamePlaceholder: "Podaj nazwię",
-      userNameErrorMinCharacters: "Min. 6 znaków",
-      userNameErrorMaxCharacters: "Max. 16 znaków",
+      userNameError:
+        "6-16 znaków, min. 5 liter, min. 1 cyfra, możliwe - _ [ ]  /",
       userNameErrorRegistered: "Nazwa użytkownika już zarejestrowana ",
 
       passwordLabel: "Hasło",

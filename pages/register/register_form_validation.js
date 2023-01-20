@@ -16,11 +16,10 @@ export const validationRegister = () => {
 
   let errors = false;
   const regExEmail =
-    /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
+    /^[a-z\d]+[\w\d.-]*@( ?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
 
   if (!userNameConditions()) {
-    errorUserName.textContent =
-      "6-16 znaków, min. 5 liter, min. 1 cyfra, możliwe - _ [ ]  /";
+    errorUserName.textContent = languageRef.userNameError;
     errors = true;
   } else {
     errorUserName.innerText = "";

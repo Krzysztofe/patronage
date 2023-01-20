@@ -4,20 +4,6 @@
 @import "./settings/_base.css";
 @import "./elements/_nav.css";
 
-
-
-/* @media (min-width: 769px){
-    .nav__btn{
-     color:red
-     }
-     .nav__rightSide{
-     }
-
-} */
-
-.wrapper--main {
-}
-
 .main__h1 {
   color: var(--color-white);
   font-size: clamp(3rem, 10vw, 13rem);

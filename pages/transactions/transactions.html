@@ -1,115 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Register form js</title>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/index_transactions.css" />
-    <script
-      src="https://kit.fontawesome.com/f3b0ddb395.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <nav class="nav">
-      <div class="wrapper wrapper--nav">
-        <div class="nav__topContainer">
-
-   <div class="nav__languages">
-            <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
-            <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
-          </div>
-
-
-
-          <div class="nav__loginPrint">
-            <script>
-              const printText =
-                location.hash === '#eng'
-                  ? `Loged: ${localStorage.getItem('userName')}`
-                  : `Zalogowano: ${localStorage.getItem('userName')}`
-              localStorage.getItem('userName') && document.write(printText)
-            </script>
-          </div>
-
-        </div>
-
-        <div class="nav__bottomContainer">
-          <a id="btnLogout" class="nav__btnBottom">
-            Wyloguj
-          </a>
-        </div>
-
-      </div>
-    </nav>
-
-
-<main>
-    <section class="charts">
-      <div class="wrapper wrapper--charts">  
-<div class="charts__container">
-
-        <div class="charts__slider">
-       
-            <div class="chartBox chartBox--bar ">
-                <p id = "chartBarMessage">Loading</p>
-              <canvas id="chartBar"></canvas>
-            </div> 
-
-           <div class="chartBox chartBox--dought">
-              <p id = "chartDoughtMessage">Loading</p>
-               <canvas id="chartDought"></canvas>
-            </div> 
-        </div>
-</div>
-    </section>
-  
-
-
-    <section class="sectionTable">
-      <div class="wrapper wrapper--table">
-        <div class="table__inputsContainer">
-
-          <div class="input__container">
-          <label for="input__description"> Znajdź opis </label>
-          <input type = "text" id = "input__description">
-        </div>
-
-        <div class="input__container">
-          <label for="input__type"> Znajdź typ </label>
-          <input type = "text" id = "input__type">
-        </div>
-        </div>
-  
-
-
-        <table>
-          <thead>
-            <tr>
-              <th class="cell__desktopOnly">Data</th>
-              <th>Typ </th>
-              <th>Opis</th>
-              <th>Kwota</th>
-              <th class="cell__desktopOnly">Saldo</th>
-            </tr>
-          </thead>
-
-          <tbody id="tbody"></tbody>
-           
-        </table>
-
-      </div>
-    </section>
-</main>
- <script type="module" src="../../utils/nav_btns_languages.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="./transactions_main.js"></script>
-    <script type = "module" src = "./languages/languages_transactions_table.js"></script>
-    <script type = "module" src = "./languages/languages_transactions_nav.js"></script>
+   <head>
+      <title>Register form js</title>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./css/index_transactions.css" />
+      <script
+         src="https://kit.fontawesome.com/f3b0ddb395.js"
+         crossorigin="anonymous"
+         ></script>
+   </head>
+   <body>
+      <nav class="nav">
+         <div class="wrapper wrapper--nav">
+            <div class="nav__topContainer">
+               <div class="nav__languages">
+                  <a href="#eng" class="nav__btnLanguage" data-reload>ENG</a>
+                  <a href="#pl" class="nav__btnLanguage" data-reload>PL</a>
+               </div>
+               <div class="nav__loginPrint">
+                  <script>
+                     const printText =
+                       location.hash === '#eng'
+                         ? `Loged: ${localStorage.getItem('userName')}`
+                         : `Zalogowano: ${localStorage.getItem('userName')}`
+                     localStorage.getItem('userName') && document.write(printText)
+                  </script>
+               </div>
+            </div>
+            <div class="nav__bottomContainer">
+               <a id="btnLogout" class="nav__btnBottom">
+               Wyloguj
+               </a>
+            </div>
+         </div>
+      </nav>
+      <main>
+         <section class="charts">
+            <div class="wrapper wrapper--charts">
+            <div class="charts__container">
+               <div class="charts__slider">
+                  <div class="chartBox chartBox--bar ">
+                     <p id = "chartBarMessage">Loading</p>
+                     <canvas id="chartBar"></canvas>
+                  </div>
+                  <div class="chartBox chartBox--dought">
+                     <p id = "chartDoughtMessage">Loading</p>
+                     <canvas id="chartDought"></canvas>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <section class="sectionTable">
+            <div class="wrapper wrapper--table">
+               <div class="table__inputsContainer">
+                  <div class="input__container">
+                     <label for="input__description"> Znajdź opis </label>
+                     <input type = "text" id = "input__description">
+                  </div>
+                  <div class="input__container">
+                     <label for="input__type"> Znajdź typ </label>
+                     <input type = "text" id = "input__type">
+                  </div>
+               </div>
+               <table>
+                  <thead>
+                     <tr>
+                        <th class="cell__desktopOnly">Data</th>
+                        <th>Typ </th>
+                        <th>Opis</th>
+                        <th>Kwota</th>
+                        <th class="cell__desktopOnly">Saldo</th>
+                     </tr>
+                  </thead>
+                  <tbody id="tbody"></tbody>
+               </table>
+            </div>
+         </section>
+      </main>
+      <script type="module" src="../../utils/nav_btns_languages.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script type="module" src="./transactions_main.js"></script>
+      <script type = "module" src = "./languages/languages_transactions_table.js"></script>
+      <script type = "module" src = "./languages/languages_transactions_nav.js"></script>
       <script type = "module" src = "./pritData/print_data_in_chart_dought/print_data_in_chart_dought.js"></script>
-        <script type = "module" src = "./pritData/prit_data_in_chart_bar/print_data_in_chart_bar.js"></script>
-     <script type = "module" src = "./pritData/print_data_in_table/print_data_in_table.js"></script>
-
-  </body>
+      <script type = "module" src = "./pritData/prit_data_in_chart_bar/print_data_in_chart_bar.js"></script>
+      <script type = "module" src = "./pritData/print_data_in_table/print_data_in_table.js"></script>
+   </body>
 </html>
