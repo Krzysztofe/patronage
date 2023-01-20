@@ -30,7 +30,7 @@ export const language = {
       userNameLabel: "User name",
       userNamePlaceholder: "Enter name",
       userNameError:
-        "6-16 characters, min. 5 letters, min. 1 digit, possible - _ [ ]/",
+        "6-16 characters, min. 5 letters, min. 1 digit, possible - _ [] /",
       userNameErrorRegistered: "User name already registered",
 
       passwordLabel: "Password",
@@ -90,7 +90,7 @@ export const language = {
       registerLink: "Rejestracja",
       h2: "Logowanie",
       userName: "Nazwa użytkownika",
-      userNamePlaceholder: "Poadj nazwę",
+      userNamePlaceholder: "Podaj nazwę",
       userNameError: "Podaj nazwę przypisaną do emaila",
       password: "Hasło / Email",
       passwordPlaceholder: "Podaj hasło / email",
@@ -102,9 +102,9 @@ export const language = {
       loginLink: "Logowanie",
       h2: "Rejestracja",
       userNameLabel: "Nazwa użytkownika",
-      userNamePlaceholder: "Podaj nazwię",
+      userNamePlaceholder: "Podaj nazwę",
       userNameError:
-        "6-16 znaków, min. 5 liter, min. 1 cyfra, możliwe - _ [ ]  /",
+        "6-16 znaków, min. 5 liter, min. 1 cyfra, możliwe - _ [] /",
       userNameErrorRegistered: "Nazwa użytkownika już zarejestrowana ",
 
       passwordLabel: "Hasło",
@@ -117,7 +117,7 @@ export const language = {
       emailErrorRegistered: "Email już zarejestrowany",
 
       emailRepeatLabel: "Powtwierdź email",
-      emailRepeatPlacecholder: "Powtierdź email",
+      emailRepeatPlacecholder: "Powtwierdź email",
       emailRepeatError: "Powtwierdź email",
 
       btnRegister: "Zarejestruj",
