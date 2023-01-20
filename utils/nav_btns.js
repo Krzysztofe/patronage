@@ -24,9 +24,13 @@ btnLogout.className = "nav__btnBottom";
 
 const nav = document.querySelector(".nav__bottomContainer");
 
+// IF NOT LOGGED
+
 !localStorage.getItem("userName") && nav.prepend(btnRegisterLink);
 
 !localStorage.getItem("userName") && nav.prepend(btnLoginLink);
+
+// IF LOGGED
 
 localStorage.getItem("userName") && nav.prepend(btnTransactions);
 

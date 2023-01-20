@@ -4,14 +4,17 @@ import { languageURLKey } from "../../data/variables.js";
 localStorage.getItem("userName") &&
   (location.href = `../transactions/transactions.html${languageURLKey}`);
 
-const btn = document.getElementById("btnLogin");
+const formElem = document.querySelector("form");
 
-btn.addEventListener("click", () => {
+formElem.addEventListener("submit", e => {
+  e.preventDefault;
   if (validationLogin()) return;
   saveData();
   userName.value = "";
   password.value = "";
 });
+
+// SET LOGED USER NAME IN KEY "userName" IN LOCALSTORAGE
 
 const saveData = () => {
   const userNameValue = document.getElementById("userName").value.trim();

@@ -1,35 +1,7 @@
-import { API_URL } from "../../../data/URL.js";
-import { sendHTTPRequest } from "../../../utils/send_HTTPRequest.js";
-import { language } from "../../../data/languages_data.js";
-import { languageKey } from "../../../data/variables.js";
+import { language } from "../../../../data/languages_data.js";
+import { languageKey } from "../../../../data/variables.js";
 
-const message = document.getElementById("chartBarMessage");
-
-sendHTTPRequest(API_URL)
-  .then(data => {
-    message.remove();
-    const dates = data.transactions
-      .map(transaction => {
-        return transaction.date;
-      })
-      .reverse();
-
-    const balances = data.transactions.map(transaction => {
-      return transaction.balance;
-    });
-
-    dates.push(2022, 2023);
-    balances.push(-3000, -1000);
-
-    return chartPrint(dates, balances);
-  })
-  .catch(err => {
-    message.innerText = `${err} ${err.data?.message}`;
-  });
-
-const body = document.querySelector("body");
-
-const chartPrint = (x_Param, y_Param) => {
+export const chartBarPrint = (x_Param, y_Param) => {
   const chart = document.getElementById("chartBar").getContext("2d");
 
   Chart.defaults.font.size = 5;

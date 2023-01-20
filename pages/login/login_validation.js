@@ -7,6 +7,7 @@ export const validationLogin = () => {
   const userNameValue = document.getElementById("userName").value.trim();
   const passwordValue = document.getElementById("password").value.trim();
   const usersData = JSON.parse(localStorage.getItem("users")) || [];
+
   const regExEmail =
     /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
   const languageRef = language[languageKey].pageLogin;

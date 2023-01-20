@@ -12,35 +12,32 @@
 
 /* INPUTS */
 .table__inputsContainer {
-  font-size: clamp(1rem, 1vw, 1.5rem);
+  font-size: 1.4rem;
   color: var(--color-white);
   background-color: var(--color-primary);
   width: 100%;
   padding: 0.4rem;
+  display: flex;
 }
 
 .input__container {
   display: flex;
-  align-items: center;
 }
 
 .input__container + .input__container {
-  margin-top: 0.2rem;
+  margin-left: 0.7rem;
 }
 
 label {
   display: block;
   text-align: right;
-  width: 70%;
-  font-size: 0.9rem;
 }
 
 input {
-  font-size: 1rem;
   padding: 0.2rem;
   border: none;
   margin-left: 1rem;
-  width: 30%;
+  width: 4rem;
 }
 
 /* TABLE */
@@ -144,14 +141,14 @@ td p span {
     margin-left: 2rem;
   }
 
-  label,
+  /* label,
   input {
     font-size: 1.2rem;
-  }
-
+  } */
+  /* 
   input {
     padding-bottom: 0;
-  }
+  } */
 }
 
 /* TABLE */

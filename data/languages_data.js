@@ -51,8 +51,7 @@ export const language = {
     pageTransactions: {
       table: {
         btnLogout: "Logout",
-        inputsLabels: ["Find transaction description", "Find transaction type"],
-        placeholders: ["Enter data", "Enter data"],
+        inputsLabels: ["Find description", "Find type"],
         tableHead: ["Data", "Type", "Description", "Amount", "Balance"],
         transactionTypes: {
           1: "Income - other",
@@ -127,8 +126,7 @@ export const language = {
     pageTransactions: {
       table: {
         btnLogout: "Wyloguj",
-        inputsLabels: ["Wyszukaj opis transakcji", "Wyszukaj typ transakcji"],
-        placeholders: ["Wpisz dane", "Wpisz dane"],
+        inputsLabels: ["Znajź opis", "Znajdź typ"],
         tableHead: ["Data", "Typ", "Opis", "Kwota", "Saldo"],
         transactionTypes: {
           1: "Wydatki - inne",

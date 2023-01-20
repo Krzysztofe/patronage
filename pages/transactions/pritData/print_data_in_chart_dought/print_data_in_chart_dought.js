@@ -1,7 +1,6 @@
-import { API_URL } from "../../../data/URL.js";
-import { sendHTTPRequest } from "../../../utils/send_HTTPRequest.js";
-import { languageKey } from "../../../data/variables.js";
-import { language } from "../../../data/languages_data.js";
+import { API_URL } from "../../../../data/URL.js";
+import { sendHTTPRequest } from "../../../../utils/send_HTTPRequest.js";
+import { chartDoughtPrint } from "../print_data_in_chart_dought/chart_dought_patern.js";
 
 const message = document.getElementById("chartDoughtMessage");
 
@@ -31,24 +30,10 @@ sendHTTPRequest(API_URL)
       return { ...accumulator, [value]: (accumulator[value] || 0) + 1 };
     }, {});
 
-    const transactionsNames = Object.keys(typesCounter);
     const transactionsRepeatitions = Object.values(typesCounter);
 
-    return chartPrint(transactionsNames, transactionsRepeatitions);
+    return chartDoughtPrint(transactionsRepeatitions);
   })
   .catch(err => {
     message.innerText = `${err} ${err.data?.message}`;
   });
-
-const chartPrint = (x_Param, y_Param) => {
-  const chart = document.getElementById("chartDought").getContext("2d");
-
-  const transactionsRepetitionChart = new Chart(chart, {
-    type: "doughnut",
-    data: {
-      labels:
-        language[languageKey].pageTransactions.chartDought.transactionTypes,
-      datasets: [{ label: "Saldo", data: y_Param }],
-    },
-  });
-};

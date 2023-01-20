@@ -20,12 +20,15 @@ formElem.addEventListener("submit", e => {
   emailRepeat.value = "";
 });
 
+// SET USER OBJECT IN ARRAY "users" IN LOCALSTORAGE,
+// SET LOGED USER NAME IN KEY "userName" IN  LOCALSTORAGE
+
 const setData = () => {
-  const userNameValue = userName.value.trim();
   const usersData = JSON.parse(localStorage.getItem("users")) || [];
   const formData = new FormData(formElem);
   const user = Object.fromEntries(formData);
   usersData.push(user);
+  const userNameValue = userName.value.trim();
   const logedUser = usersData.filter(i => i.userName === userNameValue)[0];
   localStorage.setItem("userName", logedUser.userName);
   localStorage.setItem("users", JSON.stringify(usersData));
