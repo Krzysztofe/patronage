@@ -116,9 +116,9 @@ export const language = {
       emailError: "Podaj format email",
       emailErrorRegistered: "Email już zarejestrowany",
 
-      emailRepeatLabel: "Powtwierdź email",
-      emailRepeatPlacecholder: "Powtwierdź email",
-      emailRepeatError: "Powtwierdź email",
+      emailRepeatLabel: "Potwierdź email",
+      emailRepeatPlacecholder: "Potwierdź email",
+      emailRepeatError: "Potwierdź email",
 
       btnRegister: "Zarejestruj",
     },

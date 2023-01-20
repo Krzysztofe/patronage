@@ -56,7 +56,6 @@ export const validationRegister = () => {
     errorEmail.innerText = languageRef.emailErrorRegistered;
     errors = true;
   }
-
   return errors;
 };
 
