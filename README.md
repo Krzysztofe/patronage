@@ -1,3 +1,5 @@
 # patronage
 
-https://patronage.pages.dev/
+https://transactions.pages.dev/
+
+https://pages.cloudflare.com/
