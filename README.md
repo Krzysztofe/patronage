@@ -1,6 +1,6 @@
 # Transactions
 
-"Transactions" is a website which after the registration of the user presents the transactions data. Data are presented in the form of charts and tables.
+"Transactions" is a website which after the registration of the user presents the transactions data. Data are presented in the form of charts and table.
 
 ## Features
 * Responsive design
