@@ -1,0 +1,33 @@
+@import "./css/generic/_reset.css";
+@import "./css/settings/_variables.css";
+@import "./css/settings/_typography.css";
+@import "./css/settings/_base.css";
+@import "./css/elements/_nav.css";
+
+.wrapper__main {
+  color: var(--color-white);
+  height: calc(100vh - 82px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__h1 {
+  font-size: clamp(3rem, 10vw, 13rem);
+  letter-spacing: 0.5rem;
+}
+
+.dolarIcon {
+  position: absolute;
+  color: white;
+  margin-top: -1rem;
+  animation: dolar linear;
+  font-size: 2.5rem;
+}
+
+@keyframes dolar {
+  to {
+    transform: translateY(1500vh);
+  }
+ 
+}

@@ -5,6 +5,10 @@ body {
   background-size: cover;
 }
 
+body::-webkit-scrollbar{
+  display: none;
+}
+
 .wrapper {
   margin: 0 auto;
   width: clamp(280px, 100%, 1130px);
