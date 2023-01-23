@@ -10,6 +10,7 @@
 * Pagination 
 * Polish and english version of the site
 * Searching for data contained in a table 
+* Animations 
 
 ## Technologies  
 * CSS, RWD 
