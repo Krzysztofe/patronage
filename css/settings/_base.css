@@ -3,6 +3,8 @@ body {
   height: 100vh;
   background-image: url("../../asets/pexels-andre-moura-3293037.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 body::-webkit-scrollbar{
