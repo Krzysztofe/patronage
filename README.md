@@ -15,6 +15,7 @@
 * CSS, RWD 
 * Valilla JS
 * Fetch API: GET
+* Chart JS
 * Regular expressions
 * LoacalStorage
 
