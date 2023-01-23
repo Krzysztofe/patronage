@@ -1,7 +1,9 @@
+import {ENG} from './data/variables.js';
+
 const createIcon = () => {
   const dolarIcon = document.createElement("i");
   dolarIcon.classList.add("dolarIcon");
-  dolarIcon.textContent = "$";
+  dolarIcon.textContent = ENG ? "$" : "PLN";
   const main = document.querySelector("main");
   main.prepend(dolarIcon);
   const styles = window.getComputedStyle(main);
