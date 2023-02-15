@@ -16,6 +16,7 @@
 * CSS, RWD 
 * Valilla JS
 * Fetch API: GET
+* JSON <a href = "https://my-json-server.typicode.com/Krzysztofe/transactions_api/db">my-json-server-></a> 
 * Chart JS
 * Regular expressions
 * LoacalStorage
