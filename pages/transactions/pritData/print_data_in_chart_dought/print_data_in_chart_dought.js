@@ -8,7 +8,8 @@ sendHTTPRequest(API_URL)
   .then(data => {
     message.remove();
     const transactions = data.transactions;
-    const transacationTypes = data.transacationTypes;
+    const transacationTypes = data.transactionTypes;
+
     const typesList = transactions.map(i => {
       switch (i.type) {
         case 1:
@@ -26,11 +27,11 @@ sendHTTPRequest(API_URL)
       }
     });
 
-    const typesCounter = typesList.reduce((accumulator, value) => {
+    const getTypesCount = typesList.reduce((accumulator, value) => {
       return { ...accumulator, [value]: (accumulator[value] || 0) + 1 };
     }, {});
 
-    const transactionsRepeatitions = Object.values(typesCounter);
+    const transactionsRepeatitions = Object.values(getTypesCount);
 
     return chartDoughtPrint(transactionsRepeatitions);
   })

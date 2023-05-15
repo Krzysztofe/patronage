@@ -1,8 +1,8 @@
-import { languageURLKey } from "../../data/variables.js";
+import { languageURLKey, userUnLoged } from "../../data/variables.js";
 
 // IF UER NOT LOGET MOVE TO LOGIN
 
-!localStorage.getItem("userName") &&
+userUnLoged &&
   (location.href = `../login/login.html${languageURLKey}`);
 
 const btn = document.getElementById("btnLogout");

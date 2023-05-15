@@ -1,4 +1,4 @@
-import { languageKey, languageURLKey } from "../data/variables.js";
+import { languageKey, languageURLKey, userLoged, userUnLoged } from "../data/variables.js";
 import { language } from "../data/languages_data.js";
 
 const languageRef = language[languageKey].nav;
@@ -26,15 +26,15 @@ const nav = document.querySelector(".nav__bottomContainer");
 
 // IF NOT LOGGED PRINT REGISTER LOGIN
 
-!localStorage.getItem("userName") && nav.prepend(btnRegisterLink);
+userUnLoged && nav.prepend(btnRegisterLink);
 
-!localStorage.getItem("userName") && nav.prepend(btnLoginLink);
+userUnLoged && nav.prepend(btnLoginLink);
 
 // IF LOGGED PRINT LOGOUT TRANSACTIONS
 
-localStorage.getItem("userName") && nav.prepend(btnTransactions);
+userLoged && nav.prepend(btnTransactions);
 
-localStorage.getItem("userName") && nav.prepend(btnLogout);
+userLoged && nav.prepend(btnLogout);
 
 btnLogout.addEventListener("click", () => {
   localStorage.removeItem("userName");

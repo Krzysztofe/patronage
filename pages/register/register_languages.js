@@ -3,24 +3,43 @@ import { languageKey, languageURLKey } from "../../data/variables.js";
 
 const languageRef = language[languageKey].pageRegister;
 
-document.getElementById("btnLoginLink").textContent = languageRef.loginLink;
-document.getElementById(
-  "btnLoginLink"
-).href = `../login/login.html${languageURLKey}`;
+const [
+  btnLoginLink,
+  h2,
+  userNameLabel,
+  userName,
+  passwordLabel,
+  password,
+  emailLabel,
+  email,
+  emailRepeatLabel,
+  emailRepeat,
+  btnRegister,
+] = [
+  "btnLoginLink",
+  "h2",
+  "userNameLabel",
+  "userName",
+  "passwordLabel",
+  "password",
+  "emailLabel",
+  "email",
+  "emailRepeatLabel",
+  "emailRepeat",
+  "btnRegister",
+].map(item => {
+  return document.getElementById(item);
+});
 
-document.getElementById("h2").textContent = languageRef.h2;
-document.getElementById("userNameLabel").textContent =
-  languageRef.userNameLabel;
-document.getElementById("userName").placeholder =
-  languageRef.userNamePlaceholder;
-document.getElementById("passwordLabel").textContent =
-  languageRef.passwordLabel;
-document.getElementById("password").placeholder =
-  languageRef.passwordPlaceholder;
-document.getElementById("emailLabel").textContent = languageRef.emaiLabel;
-document.getElementById("email").placeholder = languageRef.emailPlaceholder;
-document.getElementById("emailRepeatLabel").textContent =
-  languageRef.emailRepeatLabel;
-document.getElementById("emailRepeat").placeholder =
-  languageRef.emailRepeatPlacecholder;
-document.getElementById("btnRegister").textContent = languageRef.btnRegister;
+btnLoginLink.textContent = languageRef.loginLink;
+btnLoginLink.href = `../login/login.html${languageURLKey}`;
+h2.textContent = languageRef.h2;
+userNameLabel.textContent = languageRef.userNameLabel;
+userName.placeholder = languageRef.userNamePlaceholder;
+passwordLabel.textContent = languageRef.passwordLabel;
+password.placeholder = languageRef.passwordPlaceholder;
+emailLabel.textContent = languageRef.emaiLabel;
+email.placeholder = languageRef.emailPlaceholder;
+emailRepeatLabel.textContent = languageRef.emailRepeatLabel;
+emailRepeat.placeholder = languageRef.emailRepeatPlacecholder;
+btnRegister.textContent = languageRef.btnRegister;

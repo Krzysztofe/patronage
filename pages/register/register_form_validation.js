@@ -2,16 +2,19 @@ import { language } from "../../data/languages_data.js";
 import { languageKey } from "../../data/variables.js";
 
 export const validationRegister = () => {
-  const errorUserName = document.querySelector(".errorUserName");
-  const errorPassword = document.querySelector(".errorPassword");
-  const errorEmail = document.querySelector(".errorEmail");
-  const errorEmailRepeat = document.querySelector(".errorEmailRepeat");
+  const [errorUserName, errorPassword, errorEmail, errorEmailRepeat, form] = [
+    ".errorUserName",
+    ".errorPassword",
+    ".errorEmail",
+    ".errorEmailRepeat",
+    "form",
+  ].map(item => {
+    return document.querySelector(item);
+  });
 
   const languageRef = language[languageKey].pageRegister;
   const usersData = JSON.parse(localStorage.getItem("users")) || [];
-
-  const formElem = document.querySelector("form");
-  const formData = new FormData(formElem);
+  const formData = new FormData(form);
   const user = Object.fromEntries(formData);
 
   let errors = false;
@@ -47,12 +50,12 @@ export const validationRegister = () => {
     errorEmailRepeat.innerText = "";
   }
 
-  if (usersData.some(i => i.userName === user.userName)) {
+  if (usersData.some(userData => userData.userName === user.userName)) {
     errorUserName.innerText = languageRef.userNameErrorRegistered;
     errors = true;
   }
 
-  if (usersData.some(i => i.email === user.email)) {
+  if (usersData.some(userData => userData.email === user.email)) {
     errorEmail.innerText = languageRef.emailErrorRegistered;
     errors = true;
   }
@@ -66,9 +69,5 @@ const userNameConditions = () => {
   const dygits = userNameValue.match(/[0-9]/g) || [];
   const charts = userNameValue.match(/[a-z]/gi) || [];
 
-  if (dygits.length > 0 && charts.length > 4 && basicConditions) {
-    return true;
-  } else {
-    return false;
-  }
+  return dygits.length > 0 && charts.length > 4 && basicConditions;
 };

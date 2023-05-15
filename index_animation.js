@@ -8,7 +8,7 @@ const createIcon = () => {
   main.prepend(dolarIcon);
   const styles = window.getComputedStyle(main);
   const width = styles.width;
-  dolarIcon.style.left = Math.random() * parseInt(width) - 15 + "px";
+  dolarIcon.style.left = Math.random() * parseInt(width) + "px";
   dolarIcon.style.animationDuration = Math.random() * 80 + 50 + "s";
   dolarIcon.style.opacity = Math.random();
   setTimeout(() => {

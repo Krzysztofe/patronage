@@ -1,9 +1,9 @@
 import { validationRegister } from "./register_form_validation.js";
-import { languageURLKey } from "../../data/variables.js";
+import { languageURLKey, userLoged } from "../../data/variables.js";
 
 // IF USER LOGED MOVE TO TRANSACTIONS
 
-localStorage.getItem("userName") &&
+userLoged &&
   (location.href = `../transactions/transactions.html${languageURLKey}`);
 
 const userName = document.getElementById("userName");
