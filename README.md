@@ -21,4 +21,4 @@
 * Registered user data in localStorage
 
 ## Demo <a href="https://transactions.pages.dev/">here -></a>
-![Zrzut ekranu (155)](https://user-images.githubusercontent.com/96065197/213931741-829dd277-ba1e-4fef-8003-ef904c4c5eb2.png)
+![Zrzut ekranu (120)](https://github.com/Krzysztofe/transactions/assets/96065197/d7cbfcbc-376c-4d89-a3f0-c79e4ee6c4a5)
